@@ -1,0 +1,378 @@
+\documentclass[12pt]{book}
+\usepackage{axodraw4j}
+\usepackage{latexsym}
+\usepackage[backend=bibtex,style=alphabetic]{biblatex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{gensymb}
+%\usepackage{chapterbib}
+\usepackage{enumerate}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{hyperref}
+\usepackage[font=small,labelfont=bf]{caption}
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+\renewcommand*{\bibfont}{\small}
+
+\setlength{\hoffset}{-1in}
+\setlength{\voffset}{-1in}
+
+\setlength{\topmargin}{2.5cm}
+\setlength{\headheight}{0cm}
+\setlength{\headsep}{0cm}
+
+\setlength{\oddsidemargin}{3.5cm}
+\setlength{\evensidemargin}{2.5cm}
+
+\setlength{\textwidth}{15cm}
+\setlength{\textheight}{24cm}
+
+\pagestyle{plain}
+
+%% interlinea normale e in math mode %%
+\renewcommand{\baselinestretch}{1.3}
+
+%% Clear page %%
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+%%% Aliases for Chapter 1 %%%
+
+\def\qw		{{\bf q},\omega}
+\def\ql  	{{\bf q},\lambda}
+\def\rw		{{\bf r},\omega}
+\def\rt		{{\bf r},t}
+\def\rtp	{{\bf r},t'}
+\def\tone   {t_{1}}
+\def\ttwo   {t_{2}}
+\def\taoone   {\tau_{1}}
+\def\taotwo   {\tau_{2}}
+\def\ttmto   {\tau_{2}-\tau_{1}}
+\def\tomtt   {\tau_{1}-\tau_{2}}
+\def\pp		{{\bf p}}
+\def\xx		{{\bf x}}
+\def\bxi      	{\boldsymbol{\xi}}
+\def\rr		{{\bf r}}
+\def\rrp	{{\bf r}'}
+\def\rrone	{{\bf r}_1}
+\def\rrtwo	{{\bf r}_2}
+\def\vv		{{\bf v}}
+\def\bA		{{\bf A}}
+\def\BB		{{\bf B}}
+\def\GG		{{\bf G}}
+\def\RR		{{\bf R}}
+\def\TT		{{\bf T}}
+\def\KK		{{\bf K}}
+\def\EE		{{\bf E}}
+\def\qq		{{\bf q}}
+\def\kk		{{\bf k}}
+\def\redk	{{\color{red} {\bf k}}}
+\def\jj		{{\bf j}}
+\def\calGzero   {{\cal G}^{(0)}(\kk,\gon)}
+\def\calG       {{\cal G}(\kk,\gon)}
+\def\intr	{\int\,d{\bf r}\,}
+\def\intrp	{\int\,d{\bf r}'\,}
+\def\introne	{\int\,d{\bf r}_{1}\,}
+\def\intrtwo	{\int\,d{\bf r}_{2}\,}
+\def\intao     {\int\,d\tau\,}
+
+\def\ga         {\alpha}
+\def\gb         {\beta}
+\def\gc         {\gamma}
+\def\gC         {\Gamma}
+\def\gd         {\delta}
+\def\gD         {\Delta}
+\def\gee        {\epsilon}
+\def\gl         {\lambda}
+\def\gL         {\Lambda}
+\def\go         {\omega}
+\def\gO         {\Omega}
+\def\goql       {\omega_{\qq \gl}}
+\def\gql        {\qq \gl}
+\def\gon        {\omega_{n}}
+\def\goj        {\omega_{j}}
+\def\goi        {\omega_{i}}
+\def\igon       {i\omega_{n}}
+\def\igoi       {i\omega_{i}}
+\def\igoj       {i\omega_{j}}
+\def\gr         {\rho}
+\def\gs         {\sigma}
+\def\gS         {\Sigma}
+\def\gSnko      {\Sigma_{\nk}(\go)}
+\def\Skon       {\Sigma(\kk,\gon)}
+\def\Snko       {\Sigma_{n\kk}(\go)}
+\def\Snkoi      {\Sigma_{n\kk}(\goi)}
+\def\gt         {\theta}
+\def\gu         {\tau}
+\def\gup         {\tau'}
+\def\ek         {\gee_{\bf k}}
+\def\ekpq       {\gee_{\bf {k+q}}}
+%\def\ep         {\gee_{p}}
+\def\capo       {\right.\\ \left.}
+\def\dn         {\downarrow}
+\def\up         {\uparrow}
+\def\rar        {\rightarrow}  
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\chitwo}{\chi^{(2)}}
+\def\dg         {\dagger}
+\def\grG        {\gr_{nn'}(\kk,\qq,{\bf G})}
+\def\grGo       {\gr_{nn'}(\kk,\qq,{\bf G_1})}
+\def\grGts      {\gr_{nn'}^*(\kk,\qq,{\bf G_2})}
+\def\uob        {\frac {1}{\gb}}
+\def\uoZ        {\frac {1}{Z}}
+\def\uot        {\frac {1}{2}}
+\def\uop        {\frac {1}{\pi}}
+\def\uon        {\frac {1}{N_{\qq}}}
+\def\sumon      {\sum_{n=-\infty}^{+\infty}}
+\def\sumoj      {\sum_{j=-\infty}^{+\infty}}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\def\MBPT       {many-body perturbation theory}
+\def\MB         {many-body }
+\def\GS         {ground state }
+\def\GF         {Green's function }
+\def\GFv        {Green's function, }
+\def\GFs         {Green's functions }
+\def\zpme         {zero point motion effect}
+
+%%% More aliases for Chapter 2 %%%
+\def\FF		    {{\bf F}}
+%\def\nku        {n_1{\bf k}_1}
+%\def\nukmq      {n_1\({\bf k-q}\)}
+
+\def\dk         {\frac{d\,{\bf k}}{\(2 \pi\)^3}}
+\def\dku        {\frac{d\,{\bf k}_1}{\(2 \pi\)^3}}
+\def\dq         {\frac{d\,{\bf q}}{\(2 \pi\)^3}}
+
+%%% Aliases for Chapter 2 %%%
+\def\ecut       {\it E_{cut} }
+
+\newcommand{\JJ}{{\boldsymbol J}}
+\newcommand{\lv}{{\bf a}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\uu}{{\bf u}}
+\newcommand{\hh}{{\bf h}}
+\newcommand{\PP}{{\bf P}}
+\newcommand{\HH}{{\bf H}}
+\newcommand{\SiS}{{\bf \Sigma}}
+\newcommand{\VV}{{\bf V}}
+\newcommand{\UU}{{\bf U}}
+\newcommand{\w}{\omega}
+\newcommand{\tf}{\textbf}
+\newcommand{\bo}{\mathbf}
+\newcommand{\br}{{\bf r}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ben}{\begin{equation*}}
+\newcommand{\een}{\end{equation*}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bean}{\begin{eqnarray*}}
+\newcommand{\eean}{\end{eqnarray*}}
+\newcommand{\nup}{n_{\uparrow}}
+\newcommand{\ndown}{n_{\downarrow}}
+\newcommand{\Id}[1] {\int \! \! {\rm d}^3 #1}
+\renewcommand{\v}[1]{{\bf #1}}
+\renewcommand{\[}{\left[}
+\renewcommand{\]}{\right]}
+\renewcommand{\(}{\left(}
+\renewcommand{\)}{\right)}
+\def\efield{\boldsymbol{\cal E}}
+\def\ket#1{\vert#1\rangle}
+\def\bra#1{\langle#1\vert}
+\def\susc#1{\chi^{(#1)}}
+\def\ket#1{\vert#1\rangle}
+\def\bra#1{\langle#1\vert}
+\def\ai{\emph{ab-initio} }
+
+\newcommand{\newtensor}[1] {\underline{\underline{#1}}}
+
+
+%%% More aliases for Chapter 2-3 %%%
+\def\Hscf       {H_{scf} }
+\def\Vscf       {V_{scf} }
+
+\def\nk         {n{\bf k}}
+\def\npkp       {n' \kk'}
+\def\npk        {n' \kk}
+\def\rnpk       {\mid  n'    \kk    \ra}
+\def\lnpk       {\la   n'    \kk    \mid}
+\def\rnk        {\mid  n     \kk    \ra}
+\def\lnk        {\la   n     \kk    \mid}
+\def\rnpkp      {\mid  n'    \kk'   \ra}
+\def\lnpkp      {\la   n'    \kk'   \mid}
+\def\rnpkpq     {\mid  n',{\bf k+q} \ra}
+\def\npkmq      {n' {\bf k-q}}
+\def\npkpq      {n' {\bf k+q}}
+
+\def\uu		{{\bf u}_{Is}}
+\def\uais	{u_{\ga,Is}}
+\def\ubis	{u_{\gb,Is}}
+\def\ubjsp	{u_{\gb,Js'}}
+
+
+%%% Alias for TDDFT
+\def\sss{\scriptscriptstyle\rm}
+\def\Efield{\boldsymbol{\cal E}}
+\def\efield{\boldsymbol{\scriptstyle \cal E}}
+\def\ket#1{\vert#1\rangle}
+\def\bra#1{\langle#1\vert}
+\def\susc#1{\chi^{(#1)}}
+\def\PPo#1{{\boldsymbol {\cal P}}^{(#1)}}
+\def\tsusc#1{\tilde{\chi}^{(#1)}}
+\def\ket#1{\vert#1\rangle}
+\def\bra#1{\langle#1\vert}
+\def\mac{^{\rm mac}}
+\def\G{_{\rm G}}
+\newcommand{\Av}{{\bf A}}
+\newcommand{\chio}{\chi^{(0)}}
+\newcommand{\chirr}{\chi^{\rho\rho}}
+\newcommand{\bchirr}{\bar\chi^{\rho\rho}}
+\newcommand{\tchirr}{\tilde\chi^{\rho\rho}}
+\newcommand{\zero}{{\bf 0}}
+\def\tensor#1{\overset\leftrightarrow{#1}}
+
+\newcommand{\PPc}{{\boldsymbol {\cal P}}}
+\newcommand{\DDc}{{\boldsymbol {\cal D}}}
+\newcommand{\EEc}{{\boldsymbol {\cal E}}}
+
+
+
+\def\qp          {quasiparticle}
+
+%%% Aliases for Journals %%%
+\def\prl         {Phys. Rev. Lett. }
+\def\prb         {Phys. Rev. B }
+\def\pr          {Phys. Rev. }
+\def\rpm         {Rev. Mod. Phys. }
+\def\jpc         {J. Phys. Chem. }
+\def\jp          {J. Phys. C }
+\def\jcp         {J. Chem. Phys. }
+\def\pss         {Phys. Stat. Sol. }
+
+%%% More aliases for Appendix %%%
+\def\bverb      {\renewcommand{\baselinestretch}{1}\begin{verbatim}}
+\def\everb  	{\end{verbatim}\renewcommand{\baselinestretch}{1.3}}
+
+%% Float.sty for [H] %%
+\restylefloat{figure}
+\restylefloat{table}
+
+\bibliography{slowlight.bib,nloptics.bib,tddft.bib,corrnlinear2d.bib,PDFT.bib,hdr.bib,stst.bib}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\begin{center}
+
+\begin{figure}
+\hspace{2cm}
+\includegraphics[width=10cm]{logo_amu}
+\end{figure}
+\vspace{-2cm}
+\Large{\underline{Aix Marseille Universit\'e}}
+\vspace{0.5cm}
+\Large{\underline{Habilitation \'a Diriger des Recherches (HDR)}}\\
+\vspace{1cm}
+\LARGE{
+{\bf Non-linear response of solids and nanostructures: a real-time prospective}}\\
+\vspace{1cm}
+\Large{\underline{\it Claudio Attaccalite}}\\[1cm]
+\vspace{0.2cm}
+    \Large{10/02/2017   Marseille (France)}\\[1cm]
+\large{
+\parbox[t]{7cm}{
+ \begin{center}
+     \underline{Les rapporteurs}\\
+             {\it Eleonora Luppi}\\[0.2cm]
+             {\it Valérie Veniard}\\[0.2cm]
+             {\it Valerio Olevano}\\[0.2cm]
+             {\it Fabien Bruneval}\\[0.2cm]
+	     {\it Roland Hayn}\end{center}}
+\hspace{.5cm}
+\parbox[t]{7cm}{
+ \begin{center}\underline{Tuteur}\\
+	     {\it Alberto Verga}\end{center}}
+}
+\vspace{1.9cm}
+
+\end{center}
+
+\clearemptydoublepage
+
+
+\pagestyle{plain}
+\pagenumbering{roman}
+
+\setcounter{tocdepth}{4}
+\renewcommand{\baselinestretch}{1.5}
+\tableofcontents
+\clearemptydoublepage
+%\renewcommand{\baselinestretch}{1.3}
+%\input{Preface/preface}
+\clearemptydoublepage
+
+\pagenumbering{arabic}
+
+\include{introduction}
+\clearemptydoublepage
+
+\include{theory}
+\clearemptydoublepage
+
+\include{realtime}
+\clearemptydoublepage
+
+\include{tddft}
+\clearemptydoublepage
+
+%\include{applications}
+%\clearemptydoublepage
+
+\include{conclusions}
+\clearemptydoublepage
+
+\setcounter{chapter}{0}
+\renewcommand{\chaptername}{Appendix}
+\renewcommand{\thechapter}{A}
+\renewcommand{\theequation}{A.\arabic{equation}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\include{appendix}
+\clearemptydoublepage
+
+
+\addcontentsline{toc}{chapter}{Bibliography}
+%\bibliographystyle{alpha}
+{\footnotesize
+\printbibliography}
+\end{document}

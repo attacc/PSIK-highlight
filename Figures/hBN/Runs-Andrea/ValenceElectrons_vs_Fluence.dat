@@ -1,0 +1,13 @@
+#
+# Summary of results of o*dynamics in 
+# FLASHIT/realtime/hBN/Runs-Andrea/ALONG_X/small_grid_QSSIN_QP/10_?/*
+#
+# Without field Nv = 16.0
+#
+#Fluence Nv		Nv		Nv		Nv
+#mj/cm2  CHSX_5.65	CHSX_8.1	TDH_5.65	TDH_8.1
+#
+.011078  15.988		16.000		16.000		15.998
+.11078   15.903		15.997		15.999          15.938
+1.1078   15.710		15.969		15.986		15.619
+11.078   15.351  	15.705          15.782		14.397
