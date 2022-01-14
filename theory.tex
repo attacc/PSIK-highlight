@@ -49,83 +49,6 @@ where $\GG$ denotes a reciprocal lattice vector and $\qq$ belongs to the first B
 \ee
 It follows from Eq.~\ref{poldens} that each Fourier component can be treated separately. Now let us consider the limit $\GG=0$ and $\qq \rightarrow 0$. In this limit  the macroscopic polarisation $\PP$ is not determined anymore by the zero Fourier component of the density, which must vanish by charge neutrality.  Thus in the limit $\qq = 0$ for an infinite crystal, the polarisation contains additional information not included in the density.\cite{Martin1998} \\
 The problem of a correct definition of polarisation in periodic systems was solved in 1993 by  King-Smith and Vanderbilt.\cite{KSV1} In their seminal paper they shown that  bulk polarisation can be expressed as a closed integral on the wave-function phase in the Brillouin zone, a particular case of the Berry's phase. Their formulation solved all problems with the previous attempts to define the polarisation. In fact the King-Smith and Vanderbilt(KSV) polarisation is a bulk quantity, its time derivative gives the current and its derivatives respect to the external field reproduce the polarisabilities at all orders.\\
-In the next section we will introduce the Berry's phase concept and will present the KSV formula.
-\section{A simple introduction to the Berry's phase}
-\label{berrysection}
-In this section we will introduce the Berry's phase concept\cite{berry1984quantal} and show by means of simple arguments which is its relation with the bulk polarisation.
- 
-We will not present the full derivation of the King-Smith and Vanderbilt formula for the polarisation  but we will explain the physical meaning of the different terms appearing in the formula and how they are related to the Berry's phase.\\                                         
-Mathematical derivation of the KSV polarisation can be found in their original paper\cite{KSV1} or in its generalisation to the many-body case\cite{PhysRevLett.80.1800}. \\ 
-Suppose you have an Hamiltonian $\HH(\bxi)$ that depends from an external parameter $\bxi$. For each value of $\bxi$ it is possible to diagolalise the Hamiltonian and obtain:
-\be
-H(\bxi) | \psi(\bxi) \rangle = E(\bxi) | \psi(\bxi) \rangle.
-\ee
-where  $E(\bxi)$ and $\psi(\bxi)$ are respectively the eigenvalue and eigenstate of $H(\bxi)$ for a fixed value of $\bxi$.
-Now we can define the phase difference between two ground states with different $\bxi$ values as: 
-\bea
-e^{-i \Delta \phi_{12}} &=& \frac{\langle \psi( \bxi_1) | \psi(\bxi_2) \rangle}{|\langle \psi(\bxi_1) | \psi (\bxi_2) \rangle |},\\
-\Delta \phi_{12} &=& -Im \log{ \langle \psi (\bxi_1) | \psi (\bxi_2)} \rangle.
-\eea
-This definition is similar to the one used in geometry to define the angle between two vectors. 
-Unfortunately $\Delta \phi_{12}$ cannot have a physical meaning, because the phase of the wave-function is arbitrary and so the phase difference. However if we construct a closed-path in the space spanned by the $\bxi$ parameter we get something new:
-\bea  
-\gamma &=&\Delta \phi_{12} + \Delta \phi_{23} + \Delta \phi_{34}  + \Delta \phi_{41} \nonumber \\
-       &=& - Im \log \langle \psi (\bxi_1) | \psi (\bxi_2) \rangle  \langle \psi (\bxi_2) | \psi (\bxi_3) \rangle \langle \psi (\bxi_3) | \psi (\bxi_4) \rangle  \langle \psi (\bxi_4) | \psi (\bxi_1) \rangle.  \label{discretberry}
-\eea
-Now the total phase change $\gamma$ is gauge invariant because each wave-function appears both as ket and bra in the previous formula.  In physics a gauge-invariant object is a potential physical observable, as for instance the eigenvalues of an Hermitian operator. However  $\gamma$  is an "exotic" observable because it cannot be expressed in term of any Hermitian operator. The reason for the existence of this strange kind of observables lies in the fact that the Hamiltonian is not isolated and the parameter $\bxi$ represents the coupling with "the rest of the universe" (to use a sentence from Berry's paper). In a truly isolated system there cannot be any manifestation of the Berry's phase and all observables are eigenvalues of an Hermitian operator.\\
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{Figures/berrypath}
-  \end{center}
-  \caption{Closed path in the space of $\bxi$ parameter. \label{closedpath}}
-\end{figure}
-Different phenomena can be described in terms of Berry's phase, as for instance the Aharonov-Bohm effect\cite{wilczek1989geometric}, the Wannier-Stack ladder spectra of semi-classical electrons\cite{zak1989berry}, and the Molecular Aharonov-Bohm Effect.\footnote{The interpretation of this phenomena in terms of Berry's phase has been questioned in recent years. For a discussion see Ref.~\cite{min2014molecular} and references there in.}\\
-Now we will show that also the polarisation in periodic systems can be expressed as a Berry's phase integral. We start from the simple case of non-interacting electrons.
-The solution of a single particle  Schr\"{o}dinger equation in an infinite crystal reduces to the one of the primitive cell with Born-von-Karman boundary conditions:
-\be
-\phi_{n,\kk} (\rr + \RR) = e^{i\kk \rr} \phi_{n,\kk}(\rr)
-\ee
-where $\phi_{n,\kk} (\rr)$ are solution of:
-\be
-\left [ \frac{1}{2m}  \pp^2 + V(\rr)\right] \phi_{n,\kk} (\rr)= \epsilon_n(\kk)\phi_{n,\kk} (\rr).
-\label{schonebody}
-\ee
-
-The Bloch theorem\cite{bloch1929quantenmechanik} guarantees that these wave-functions can be expressed as:
-\be
-\phi_{n,\kk} (\rr) = e^{i\kk \rr} u_{n,\kk}(\rr)
-\label{blochwf}
-\ee
-where $u_{n,\kk}(\rr)$ obeys to periodic boundary conditions. If we now insert the Bloch wave-functions Eq.~\ref{blochwf} in Eq.~\ref{schonebody} we get a new equation for the periodic orbitals $u_{n,\kk}(\rr)$:
-\be
-\left [ \frac{1}{2m} \left ( \pp + \hbar \redk \right ) + V(\rr)\right] u_{n,\redk} (\rr)= \epsilon_n(\redk) u_{n,\redk} (\rr).
-\label{schequ}
-\ee
-In this new equation we mapped a problem with $\kk$-dependent boundary conditions in a new problem with periodic boundary condition plus an Hamiltonian that depends parametrically on $\kk$.
-\begin{wrapfigure}{l}{0.5\textwidth}
-    \vspace{-0.7cm}
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{Figures/1DBZ}
-  \end{center}
-  \caption{Schematic representation of one-dimensional Brillouin zone, and the corresponding integration path of Eq.~\ref{berry1D}.\label{1dbz}}
-    \vspace{-0.7cm}
-\end{wrapfigure} 
-A careful reader will now recognise that we are back to a situation similar to the one presented in section~\ref{berrysection}, an Hamiltonian that depends from an external parameter $\kk$.  The question arises as which physical observable represents the phase change generated by a closed path in the $\kk$ space. This question was answered for the first time in 1993 by King-Smith and Vanderbilt.\cite{KSV1}
-They shown that the observable associated to the Berry's phase of the $\kk$ vector is the polarisation. Their formula reads:
-\be
-\PP_\alpha = \frac{2ie}{(2\pi)^3} \int_{BZ} d\kk \sum_{n=1}^{M} \langle  u_{n,\kk} | \frac{\partial}{\partial \kk_\alpha}| u_{n,\kk}\rangle
-\label{berry1D}
-\ee
-where M is the number of valence bands, and the integral is performed along  the Brillouin zone, as shown in Fig.~\ref{1dbz}.
-
-The KSV polarisation [Eq. \ref{berry1D}] is the natural extention to periodic systems of the well known formula [Eq. \ref{polisolated}] for isolated ones. In order to see this let's rewrite explicitly all terms appearing in both formula:
-\bea
-\PP^{KVS}_\alpha &=& {\color{magenta} \frac{2e}{v }} \frac{1}{V_{BZ}} \int_{BZ} \sum_{n=1}^{M} \langle  u_{n,\kk} | {\color{blue} i\frac{\partial}{\partial \kk_\alpha}}| u_{n,\kk}\rangle\\
-\PP_\alpha &=& {\color{magenta} \frac{2e}{V} }\sum_{n=1}^{M} \langle  u_{n} | {\color{blue} \vec \rr_\alpha}| u_{n}\rangle.
-\eea
-We can see here that in periodic systems the dipole operator is replaced by $i\frac{\partial}{\partial \kk_\alpha}$, the volume of the system by the one of the cell  $v$ and the integral on the wave-functions is split in a sum on k-points plus an integral for each k-point.  Notice that the dipole operator as derivative respect to the $\kk$-point will appear again in the equation of motion when we define the Hamiltoanian in presence of an external electric field (see Sec.~\ref{ss:fldcpl})\\ 
-The previous formula has been also extended to the case of a finite k-point sampling and more dimensions. The integral in dimensions larger than one is performed along periodic lines in the BZ  and summed up along the perpendicular directions (see Section~\ref{ss:fldcpl}).  King-Smith and Vanderbilt demonstrated the validity of Eq.~\eqref{berry1D} by means of Wannier functions. They supposed that is possible to map Bloch orbitals in maximal localised Wannier functions then wrote the polarisation in terms of the last ones, and finally show that this is equivalent to the Eq.~\eqref{berry1D}. Another proof was proposed some years later by R. Resta that generalised the previous formula to the many-body case and show that it reproduces the integral of the total current.\cite{PhysRevLett.80.1800} \\
-Now that we introduced the relation between Berry's phase and polarisation we are ready to use it for the non-linear response. In the next sections we will introduce the non-linear response in solids and present a new real-time formalism to calculate it. 
 \section{General introduction}
 \emph{Ab-initio} approaches based on Green's function theory became a standard tool for quantitative and predictive calculations of linear response optical properties in Condensed Matter. In particular, the state-of-the-art approach combines the $G_0W_0$ approximation for the quasi-particle band structure~\cite{aryasetiawan1998gw} with the Bethe-Salpeter equation in static ladder approximation for the response function.~\cite{strinati} This approach proved to effectively and accurately account for the essential effects beyond independent particle approximation (IPA) in a wide range of electronic systems, including extended systems with strong excitonic effects.~\cite{Onida}
 
@@ -574,49 +497,6 @@ Regarding the crystal local field, their global effect is to reduce the intensit
 \epsfig{figure=Figures/AlAs_absX2_QPRPA_vs_Luppi.pdf,width=1\textwidth,clip}
 \caption{\footnotesize{Magnitude of $\chi^{(2)}(-2\omega,\omega,\omega)$ for bulk AlAs calculated within the IPA (black triangles) and QPA (red circles) $(a)$ panel and RPA (red circles) $(b)$ panel. Each point corresponds to a real-time simulation at the given laser frequency (see Sec.~\ref{sc:compdet}). Comparison is made with results obtained \ai by direct evaluation of the $\chi^{(2)}$ in Refs.~\cite{PhysRevB.82.235201,PSSB.427.1984} in IPA (grey solid and dot-dashed line) and QPA (brown dashed and dotted line) $(a)$ panel and RPA (brown dashed and dotted line) $(b)$ panel. \label{fg:AlAsQPRPA} [Figure from Ref.\cite{nloptics2013}] }}
 \end{figure}
-
-\section{All gauges are equal but some gauges are more equal than others}
-In the previous sections we presented a real-time approach based on Berry's phase to calculate the non-linear response in solids. Here we briefely discuss possible alternatives to this formulation together with their advantages and disdvantages. In order to describe polarisation in bulk materials, Berry's phase is a necessary ingredient. However this is true only for the intrinsic polarisation, because the polarisation induced by an external field can be expressed as an integral of the total current:
-\be
-\Delta \PP (t) = \int \JJ (t) dt.
-\label{intj}
-\ee
-In periodic systems the current operator $\hat \jj$ is always well defined  and therefore we do not need any special trick to carry out its calculation. For this reason, even before the King-Smith-Vanderbilt formula, some researchers\cite{PhysRevB.62.7998} presented real-time implementation of time-dependent density functional theory in periodic systems where the polarisation was obtained by current integration.  Since scalar and vector potentials associated to electromagnetic fields are gauge dependent\cite{Jackson02} it is always possible to choose a particular gauge where all the coupling with the external field is described through the vector potential $\bA$. Therefore we do not need the dipole operator, and we can write the Hamiltonian, in the so-called velocity gauge, as:
-\be
-\HH_v =  \frac{1}{2m} \left [ \pp + \bA (\rr,t) \right ]^2 + V(\rr).
-\label{velh}
-\ee
-In this formulation one can complitely avoid the use of the Berry's phase. The vector potential that enters in the velocity gauge Hamiltonian is realted to the electric field by the equation:
-\be
-\EE(\rr,t) = -\frac{1}{c} \partial_t \bA(\rr,t)
-\ee
-Although at first sight this choice seems to be more convenient and simpler than the direct use of the polarisation, it presents different inconvenients that motivated us to develop the new approach presented in this chapter.\\
-The length gauge, we used to define our Hamiltonian [Eq.~\ref{eq:startH}], is obtained from the multipolar gauge within the electric-dipole approximation (EDA).~\cite{Kobe1982}
-The multipolar gauge is given by the condition $\Av^{M}\cdot\rr=0$ (the $M$ superscript indicates the multipolar gauge). The scalar and vector potentials are defined directly from the electric and magnetic fields respectivelly:~\cite{Kobe1982,Jackson02}  
-\begin{eqnarray}
-\Av^{M}(\rr,t) &=& -\rr \times \int_0^1 \,du\,u\BB(u\rr,t), \label{eq:mpgau1}\\
-\varphi^{M}(\rr,t) &=& -\rr \cdot \int_0^1 \,du\,\Efield(u\rr,t).\label{eq:mpgau2}
-\end{eqnarray}
-Then for zero-field, both $\Av^{M}$ and $\varphi^{M}$ are zero. This is in general not true for other gauge choices as the zero-field situation is generally described by $\Av = \nabla \Lambda$ and $\varphi = -\partial_t \Lambda$ where $\Lambda(\rr;t)$ is an arbitrary function of space and time that defines the gauge transformation.  The importance of having zero scalar/vector potentials in the zero-field situation has been emphasised by several authors. Since the vector potential can be different from zero alse in the case of zero-field in the Hamiltonian of Eq.~\eqref{velh}, it means that the eigenvalues and eigenfunctions of the velocity gauge Hamiltonian are gauge dependent and therefore cannot represent physical states not even at zero field.\\
-Another advantage of using length gauge can be understood when we pass from  length to the velocity gauge through the gauge transformation:
-\bea
-\TT (\rr,t) &=& e^{i e \bA(t) \cdot \rr/\hbar}\\
-\Psi_v(\rr,t) &=& \TT^{+} \Psi_l(\rr,t) \\
-\HH_v &=& \TT^{+} \HH_l \TT\\
-\HH_l &=&  \frac{1}{2m} \pp ^2 + V(\rr) +  \hat \rr \cdot \EE(t),\label{hlength}
-\eea
-where  $\HH_l$ is the original Hamiltonian in lenght gauge [Eq.~\ref{hlength} ], $\HH_v$ is the Hamiltonian in velocity gauge [Eq.~\ref{velh} ] and $\TT (\rr,t)$ is the gauge transformation operator.
-In the full many-body Hamiltonian all operators are local and therefore there is not problem to perform this transformation. But in approximated Hamiltonians, non local operators appear that do not commute with the Gauge transformation and therefore they acquire an unusual dependence from the vectors potential:
-\be
-\hat O_v = e^{-i e \bA(t) \cdot \rr/\hbar} \hat O_l e^{i e \bA(t) \cdot \rr/\hbar}
-\ee
-One runs in this problem in presence for examples of non-local pseudo-potentials (see section III of Ref.~\cite{PhysRevB.62.7998})  or more seriously in presence of the exchange or self-energies derived from Green's function theory. Therefore real-time dynamics in presence of non-local operators is much more complicated in velocity guage than in the length one. 
-Last but not least, the dephasing operator that appears in the Hamiltonian~[Eq.~\ref{dephterm}] do not commute with the gauge transformation, this implies that in velocity gauge the smearing cannot be simply added at the end of the calculations\cite{sangalligauge,PhysRevA.36.2763} but its full dynamics has to be taken in to account.
-Notice that also the relation \eqref{intj} between current and polarization is modified by the presence of dephasing terms in the Hamiltonian. For example in presence of a simple quasi-particle life-time $\epsilon_i = e_i + i \gamma/2$ the relation [Eq.~\ref{intj}] becomes \cite{tokman}:
-\be
- \JJ (t) = \dot \PP (t) + \gamma \PP (t).
-\ee
-All these difficulties explain the common agreement in the scientific literature that velocity gauge is not suitable or more difficult to use to study non-linear response\cite{boyd_gauge,PhysRevB.52.14636}.
 
 \section{Conclusions}\label{conclusion}                                        
 In this chapter we presented an \ai real-time approach to calculate nonlinear optical properties of extended systems in the length gauge. The key strengths of the proposed approach are first, the correct treatment of the coupling between electrons and the external field and second the possibility to include easily correlation effects beyond the IPA.
