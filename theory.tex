@@ -242,27 +242,29 @@ The approach is different for the two-photon absorption. In this case since we a
 \subsection{Results}\label{sc:results}
 \begin{figure}[ht]
 \centering
-\epsfig{figure=Figures/SiC_absX2_QPRPA_vs_Luppi.pdf,width=1\textwidth,clip}
+\epsfig{figure=Figures/SiC_absX2_QPRPA_vs_Luppi.pdf,width=0.9\textwidth,clip}
 \caption{\footnotesize{Magnitude of $\chi^{(2)}(-2\omega,\omega,\omega)$ for bulk SiC calculated within the IPA (black triangles) and QPA (red circles) $(a)$ panel and RPA (red circles) $(b)$ panel. Each point corresponds to a real-time simulation at the given laser frequency (see Sec.~\ref{sc:compdet}). Comparison is made with results obtained \ai by direct evaluation of the $\chi^{(2)}$ in Ref.~\cite{PhysRevB.82.235201} in IPA (grey solid line) and QPA (brown dashed line) $(a)$  panel and RPA (brown dashed line) $(b)$ panel.  \label{fg:SiCQPRPA} [Figure from Ref.\cite{nloptics2013}]}}
 \end{figure}
 %                                                                                                                     
+%\begin{wrapfigure}{l}{0.4\textwidth}
+%\begin{center}
+%\includegraphics[width=0.4\textwidth]{Figures/exciton}
+%\caption{\footnotesize{Schematic representation of  (a) the SHG within the IPA, or (b) accounting for electron-hole interaction. In (a) SHG is given simply by transitions between the valence (blue) and conduction (yellow) manifolds; in (b) electron-hole may lead to the formation of a bound exciton, an atomic-like level (dark red) into the fundamental band gap that strongly modifies the SHG. \label{schemeshg}}}  
+%\end{center}
+%\end{wrapfigure}   
+
+\begin{figure}[H]
+%\begin{wrapfigure}{r}{0.5\textwidth}
+    \centering
+\includegraphics[width=0.5\textwidth]{Figures/eps_and_X2_short}
+\caption{\footnotesize{SHG spectra for the h-BN monolayer at different levels of theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (dashed grey line) and TD-BSE (continous blue line). The imaginary part of the dielectric constant at both $\omega/2$ (red continuous line) and $\omega$ (red dashed line) is reported in (b) at the  TD-BSE level. The vertical lines represent the $GW$ fundamental gap (green dashed line) and half of the $GW$ fundamental gap (green continuous line). \label{absX2bn} [Figure from Ref.\cite{PhysRevB.89.081102}]}}
+\end{figure}
+%\end{wrapfigure}
 Here we present some result performed with the computation scheme presented in previous sections.
 At the beginning our computational approach has been validated by direct comparison with calculation in frequencies domain. For example in Fig. ~\ref{fg:SiCQPRPA} we compared our calculations of SHG in SiC and AlAs against the results from Refs.~\cite{PhysRevB.82.235201,PSSB.427.1984}. We found a perfect agreement for SHG in different approximation IPA, QP, TD-Hartree.  Similar comparison has been performed also for third harmonic generation versus simple models and experimental results, see Ref.~\ref{nloptics2013}.\\
 Using the methodology developed in the previous section the SHG in many two-materials from h-BN and MoS$_2$, SiC etc. has been studied.\cite{attaccalite2015strong,wei2019second,beach2020strain,mishra2020exciton,attaccalite2019second} The optical absorption of two-dimensional crystals is dominated strongly bound excitons. They offect a perfect test-case for the study of excitonic effects in the non-linear response.
 Here we present the simple case of h-BN.
-\begin{wrapfigure}{l}{0.4\textwidth}
-\begin{center}
-\includegraphics[width=0.4\textwidth]{Figures/exciton}
-\caption{\footnotesize{Schematic representation of  (a) the SHG within the IPA, or (b) accounting for electron-hole interaction. In (a) SHG is given simply by transitions between the valence (blue) and conduction (yellow) manifolds; in (b) electron-hole may lead to the formation of a bound exciton, an atomic-like level (dark red) into the fundamental band gap that strongly modifies the SHG. \label{schemeshg}}}  
-\end{center}
-\end{wrapfigure}   
-
 Hexagonal Boron-Nitride is a transparent insulating material with a large band gap of about $6~eV$. Its optical properties are dominated by strong bound excitons and they are nearly independent from the layers arrangement.\cite{PhysRevLett.96.126104,PhysRevLett.100.189701} The single layer h-BN inherits all these properties from its bulk counterpart.
-\begin{figure}[H]
-    \centering
-\includegraphics[width=0.5\textwidth]{Figures/eps_and_X2}
-\caption{\footnotesize{SHG spectra for the h-BN monolayer at different levels of theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (blue continuous line) and TDH (green dashed line); (c) IPA + GW correction (blue continuous line); (e) TD-BSE (blue continuous line) and IPA (grey dashed line). The imaginary part of the dielectric constant at both $\omega/2$ (red continuous line) and $\omega$ (red dashed line) is reported in (b), (d) and (f) for IPA, TDH and TD-BSE respectively. (f) also reports the LRC spectrum (blue dotted-dashed line) whose intensity has been reduced by a factor 0.5 for presentation reasons. The vertical lines represent the $GW$ fundamental gap (green dashed line) and half of the $GW$ fundamental gap (green continuous line). \label{absX2bn} [Figure from Ref.\cite{PhysRevB.89.081102}]}}
-\end{figure}
 In Fig.~\ref{absX2bn} we report the calculated absolute value of $\chi^{(2)}_{aab} (\omega)$ at different levels of approximation. $\chi^{(2)}_{aab} (\omega)$, where $a$ and $b$ are the in-plane Cartesian directions, is the only independent in-plane component of $\chi^{(2)} (\omega)$: all other components can be obtained from the $\chi^{(2)}_{aab} (\omega)$ with simple symmetry considerations, for instance $\chi^{(2)}_{bbb} (\omega)=-\chi^{(2)}_{aab} (\omega)$. 
 At IPA level [Fig.~\ref{absX2bn}(a)], the SHG presents a peak at $2.3~eV$ and a broad structure between $4 - 7 eV$. By comparison with the imaginary part of the dielectric constant $\epsilon_2$ both at $\omega/2$ and  $\omega$ [Fig.~\ref{absX2bn}(b)] calculated at the same level of theory, we can attribute the peak at $2.3~eV$ to two-photon resonances with $\pi \to \pi^*$ transitions, and the broad structure mostly to one-photon resonances with $\pi \to \pi^*$ transitions, with contributions around $7 eV$ of two-photon resonances with $\sigma \to \sigma^*$ transitions.
 This level of theory is the one usually employed in theoretical calculations of SHG: in fact results for the h-BN monolayer were previously obtained by Guo and Lin:~\cite{guo2005second} Fig.~\ref{X2bn} shows a very good agreement between our results and those obtained in Ref.~\cite{guo2005second}. In the following we show how effects beyond the IPA---that is the additional terms in Eq.~\eqref{mbhamiltonian}---modify the SHG spectrum.        

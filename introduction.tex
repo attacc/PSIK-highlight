@@ -1,66 +1,3 @@
-%\chapter*{List of abbreviations}
-%The following table describes the significance of various abbreviations and acronyms used throughout the thesis.  
-%\begin{table}[h]
-%\footnotesize
-%\begin{tabular}{c|c}
-%\hline
-%\textbf{Abbreviation} & \textbf{Meaning} \\
-%\hline
-%BBGKY & Bogoliubov-Born-Green-Kirkwood-Yvon hierarchy \\
-%BSE & Bethe-Salpeter Equation\\
-%BZ & Brilluoin Zone\\
-%COH & Coulomb-hole  \\
-%COHSEX & Coulomb-hole plus Screened Exchange self-energy \\
-%DFT & Density Functional Theory   \\
-%DFTP & Density Functional Polarisation Theory   \\
-%EDA & Electric-dipole Approximation \\
-%EOM & Equation of Motion   \\
-%GW & GW approximation for self-energy of a many-body system\\
-%G$_0$W$_0$ & Zero order of the GW self-energy \\
-%HF & Hartree-Fock\\
-%HHG & High Harmonic Generation   \\
-%IPA & Indepent particle approximation  \\
-%IPC & Infinite Periodic Crystal  \\
-%KBE & Kadanoff-Baym Equations\\
-%KS & Kohn and Sham\\
-%KSV & King-Smith Vanderbilt Polarisation\\
-%IP & Independent Particle\\
-%IPA & Independent Particle Approximation\\
-%JGM & Jellium with Gap Model\\
-%    & \emph{continued to the next page}   \\
-%\end{tabular}
-%\end{table}
-%
-%
-%\begin{center}
-%\begin{table}
-%\footnotesize
-%\begin{tabular}{c|c}
-%\hline
-%\textbf{Abbreviation} & \textbf{Meaning} \\
-%\hline
-%JGM-PF & Jellium with Gap Model Polarisation Functional\\
-%LDA & Local Density Approximation\\
-%LRC & Long-range corrected approximation\\
-%MBPT & Many-Body Perturbation Theory\\
-%opt-PF & optimal Polarisation Functional\\
-%PBC & Periodic Boundary Conditions\\
-%QPA & Quasi-particle approximation\\
-%RPA & Random Phase Approximation (including local field effects)\\
-%SEX & Screened Exchange self-energy \\
-%SHG & Second Harmonic Generation\\
-%THG & Third Harmonic Generation   \\
-%TD-BSE & Time-Dependent Bethe-Salpeter Equation   \\
-%TDDFT & Time-Dependent Density Functional Theory   \\
-%TDCDFT & Time-Dependent Current-Density Functional Theory   \\
-%TD-LDA & Time-Dependent Local Density Approximation\\
-%TDH/TD-HARTREE & Time-Dependent Hartree   \\
-%TDHF & Time-Dependent Hartree-Fock   \\
-%TD-KS & Time-Dependent Kohn-Sham   \\
-%\end{tabular}
-%\end{table}
-%\end{center}
-                      
 
 \section{Introduction to the non-linear optics} 
 
@@ -123,12 +60,12 @@ In the last thirty years the field of non-linear spectroscopy\cite{bloembergen19
         Applications of non-linear optics are not limited to physics, they range from optoelectronics to medicine. \\
         For example nanocrystals with non-linear properties can be bounded to proteins and then inserted in living systems.
 
-\begin{wrapfigure}{l}{0.4\textwidth}
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{Figures/ferroelectric}
-  \end{center}
-  \caption{Square root of SHG signal changing due to temperature variation, in a BaTiO$_3$ crystal. \label{ferroelectric}}
-\end{wrapfigure}
+%%\begin{wrapfigure}{l}{0.4\textwidth}
+%  \begin{center}
+%    \includegraphics[width=0.4\textwidth]{Figures/ferroelectric}
+%  \end{center}
+%  \caption{Square root of SHG signal changing due to temperature variation, in a BaTiO$_3$ crystal. \label{ferroelectric}}
+%\end{wrapfigure}
         They become a tool to probe protein dynamics. In fact under intense illumination, such as the focus of a laser-scanning microscope, these SHG nanocrystals modify the light colour and thus they can be imaged by means of the two-photon microscopy. Since biological tissue do not present a particular non-linear response, scientists can visualise the dynamics of the proteins thanks to the nanocrystals.        
         Unlike commonly used fluorescent probes, SHG nanoprobes neither bleach nor blink. The resulting contrast and detectability of SHG nanoprobes provided therefore unique advantages for molecular imaging of living cells and tissues. \cite{pantazis2010second}
 
@@ -137,27 +74,27 @@ In quantum optics, non-linear crystals are used to create entangled photons. A p
 %(see Fig.~\ref{entangled}).\cite{PhysRevLett.75.4337}\\ 
 In condensed matter the non-linear response remains an essential tool to characterise and explore electronic and structural properties of materials. 
 For example, since second harmonic generation can be produced only in materials that lack of inversion symmetry, it became a tool to probe phase transitions and phenomena the break this symmetry. \\
-In presence of a macroscopic electric field as the one of piezoelectrics, pyroelectrics, and ferroelectrics or a bulk magnetizations as in ferromagnets the inversion symmetry is broken and a simple SHG measurement as function of the temperature can be used to discriminate between the different phases of these materials. In Fig.~\ref{ferroelectric} it is shown how the SHG signal changes with the temperature in the ferroelectric BaTiO$_3$. At 120\degree~C there is no more signal and the change is very abrupt. 
-This confirms that 120\degree~C is the temperature where inversion symmetry is restored in BaTiO$_3$ crystal as it loses its ferroelectric properties.\\
+In presence of a macroscopic electric field as the one of piezoelectrics, pyroelectrics, and ferroelectrics or a bulk magnetizations as in ferromagnets the inversion symmetry is broken and a simple SHG measurement as function of the temperature can be used to discriminate between the different phases of these materials.\\ %In Fig.~\ref{ferroelectric} it is shown how the SHG signal changes with the temperature in the ferroelectric BaTiO$_3$. At 120\degree~C there is no more signal and the change is very abrupt. 
+%This confirms that 120\degree~C is the temperature where inversion symmetry is restored in BaTiO$_3$ crystal as it loses its ferroelectric properties.\\
 Another import application of non-linear response is the characterisation of surfaces and interfaces. Since SHG is much more sensitive to the lattice orientation, compared with linear optics, it can be used to scan a layer deposited on a surface and to identify  dimension and orientation of the different flakes. 
-In a recent experiment~\cite{yin2014edge}  X. Yin et al. used this idea to develop a nonlinear optical imaging technique that allows a rapid and all-optical determination of the crystal orientations in 2D materials at a large scale. In Fig.~\ref{mos2} one sees the main results of  X. Yin et al., on the left there is an image of a single-layer of MoS$_2$ in linear optics and on the right a SHG image of the same layer, where the different colours represent different intensity of the SHG response. The flakes and their orientation are clearly visible in the SHG image.
+In a recent experiment~\cite{yin2014edge}  X. Yin et al. used this idea to develop a nonlinear optical imaging technique that allows a rapid and all-optical determination of the crystal orientations in 2D materials at a large scale. %In Fig.~\ref{mos2} one sees the main results of  X. Yin et al., on the left there is an image of a single-layer of MoS$_2$ in linear optics and on the right a SHG image of the same layer, where the different colours represent different intensity of the SHG response. The flakes and their orientation are clearly visible in the SHG image.
 Instead, Y. Li at al. used SHG to probe the number of layers deposited on a surface, using the fact that an even number of layers posses inversion symmetry while an odd one does not.\cite{doi:10.1021/nl401561r}\\
-\begin{wrapfigure}{r}{0.4\textwidth}
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{Figures/mos2}
-  \end{center}
-  \caption{On the left a linear optics image of a  MoS$_2$ single layer. On the right SHG image of the same layer. \label{mos2} [Figure from Ref.\cite{yin2014edge}]}
-\end{wrapfigure}
-Another domain where SHG plays a major role is surface spectroscopy. One of the problem occurring to experimentalists is to disentangle bulk from surface contribution in their measurements. SHG is one of the few techniques that can probe the surface without the contributions from the bulk. The reason lies in the fact that in solids with inversion symmetries the bulk contribution is zero and the only source of SHG is the surface one. This is true not only for bulk materials but also for liquids that are in average symmetric but not at the liquid-liquid or gas-liquid interfaces. In  this cases SHG provides  great insights on the surface structure that sometime are difficult to probe with other techniques.\cite{eisenthal1996liquid} \\ 
-The importance of non-linear response for solids characterisation is not limited to the SHG, but also other response functions find applications in condensed matter physics. For example two-photon absorption that is proportional to the imaginary part of the $\chi^{(3)}$ can be used to probe excited states that are dark in linear optics.\cite{wang2005optical,cassabois2015hexagonal}\\ 
 %\begin{wrapfigure}{r}{0.4\textwidth}
-% \vspace{-0.8cm}
-%\begin{center}
-%\includegraphics[width=0.4\textwidth]{Figures/selffocus}
-%\end{center}
-%\vspace{-0.5cm}
-%\caption{A schematic representation of the self-focusing phenomena in optical fibers. \label{selffocusing}}
-%\end{wrapfigure}           
+%  \begin{center}
+%    \includegraphics[width=0.4\textwidth]{Figures/mos2}
+%  \end{center}
+%  \caption{On the left a linear optics image of a  MoS$_2$ single layer. On the right SHG image of the same layer. \label{mos2} [Figure from Ref.\cite{yin2014edge}]}
+%\end{wrapfigure}
+Another domain where SHG plays a major role is surface spectroscopy. One of the problem occurring to experimentalists is to disentangle bulk from surface contribution in their measurements. SHG is one of the few techniques that can probe the surface without the contributions from the bulk. The reason lies in the fact that in solids with inversion symmetries the bulk contribution is zero and the only source of SHG is the surface one. This is true not only for bulk materials but also for liquids that are in average symmetric but not at the liquid-liquid or gas-liquid interfaces. In  this cases SHG provides  great insights on the surface structure that sometime are difficult to probe with other techniques.\cite{eisenthal1996liquid} \\ 
+\begin{wrapfigure}{r}{0.4\textwidth}
+ \vspace{-0.8cm}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{Figures/selffocus}
+\end{center}
+\vspace{-0.5cm}
+\caption{A schematic representation of the self-focusing phenomena in optical fibers. \label{selffocusing}}
+\end{wrapfigure}           
+The importance of non-linear response for solids characterisation is not limited to the SHG, but also other response functions find applications in condensed matter physics. For example two-photon absorption that is proportional to the imaginary part of the $\chi^{(3)}$ can be used to probe excited states that are dark in linear optics.\cite{wang2005optical,cassabois2015hexagonal}\\ 
 Finally we want to conclude this section showing some negative sides of the non-linear response. While in many applications the non-linear response is the desired effect, there are cases where one tries to avoid any non-linear phenomena. 
 For example one of the limiting factor of the light power that can be transported by optical fibers is the self-focusing phenomena. Self-focusing is a non-linear optical process generated by the third harmonic response in materials exposed to intense electromagnetic radiation. 
 A medium whose refractive index is modified by the $\chi^{(3)}$ response acts as a focusing lens for an electromagnetic wave characterised by an initial transverse intensity gradient, as the one generated by a laser beam. % (see Fig.~\ref{selffocusing}). 
