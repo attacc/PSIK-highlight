@@ -228,7 +228,7 @@ Notice that all correlation terms we included in the Hamiltonian are Hermitian a
 %% In the screened exchange we keep the screening fix to its initial value, while we update the density matrix $\hat \rho$ at each step of the dynamics, for more details see ref.~\cite{attaccalite}. In this article we will present results only with Eq.~\eqref{tdbse_ip} and \eqref{tdbse_hartree}. In fact even if TDSHF is not difficult to implement, it is very computer demanding\cite{attaccalite} and we are developing advanced techniques to speed up Eq.~\eqref{tdbse_shf} that will be discussed in a sequent paper.\\
 %% 
 % 
-\section{Computational scheme and numerical parameters}\label{sc:compdet}
+\section{Computational scheme}\label{sc:compdet}
 According the response function one is interested in, different way to analize the results can be deviced. For example in the  second/third harmonic generation case we perturb our system with  a monochromatic electric field $\efield(t) = \efield_0 \sin(\omega_L t)$ at different frequencies and then we suppose that thanks to the dephasing after some time the  polarisation $\PP(t)$ is a periodic function of period $T_L =\frac{2\pi}{\omega_L}$, where $\omega_L$ is the frequency of the external perturbation and can be expanded in a Fourier series
 \be\label{eq:frrexp}
 \PP(t) = \sum_{n=-\infty}^{+\infty} \pp_n e^{-i\omega_n t},
