@@ -1,6 +1,6 @@
-\chapter{Dynamical Berry's phase and non-linear response} 
+\section{Dynamical Berry's phase and non-linear response} 
 \label{chapterberry}
-\section{Why do we need Berry's phase?}
+\subsection{Why do we need Berry's phase?}
 %In this work we use dynamical Berry's phase to calculate the non-linear response in extended systems. 
 %This section presents a simple introduction to the problem of polarisation definition in extended systems and how it can be solved by means of Berry's phase concept.
 %\begin{wrapfigure}{r}{0.5\textwidth}
@@ -49,7 +49,7 @@ where $\GG$ denotes a reciprocal lattice vector and $\qq$ belongs to the first B
 \ee
 It follows from Eq.~\ref{poldens} that each Fourier component can be treated separately. Now let us consider the limit $\GG=0$ and $\qq \rightarrow 0$. In this limit  the macroscopic polarisation $\PP$ is not determined anymore by the zero Fourier component of the density, which must vanish by charge neutrality.  Thus in the limit $\qq = 0$ for an infinite crystal, the polarisation contains additional information not included in the density.\cite{Martin1998} \\
 The problem of a correct definition of polarisation in periodic systems was solved in 1993 by  King-Smith and Vanderbilt.\cite{KSV1} In their seminal paper they shown that  bulk polarisation can be expressed as a closed integral on the wave-function phase in the Brillouin zone, a particular case of the Berry's phase. Their formulation solved all problems with the previous attempts to define the polarisation. In fact the King-Smith and Vanderbilt(KSV) polarisation is a bulk quantity, its time derivative gives the current and its derivatives respect to the external field reproduce the polarisabilities at all orders.\\
-\section{General introduction}
+\subsection{General introduction}
 \emph{Ab-initio} approaches based on Green's function theory became a standard tool for quantitative and predictive calculations of linear response optical properties in Condensed Matter. In particular, the state-of-the-art approach combines the $G_0W_0$ approximation for the quasi-particle band structure~\cite{aryasetiawan1998gw} with the Bethe-Salpeter equation in static ladder approximation for the response function.~\cite{strinati} This approach proved to effectively and accurately account for the essential effects beyond independent particle approximation (IPA) in a wide range of electronic systems, including extended systems with strong excitonic effects.~\cite{Onida}
 
 In contrast, for nonlinear optics \ai calculations of extended systems rely in large part on the IPA\cite{PhysRevB.48.11705} with correlation effects entering at most as a rigid shift of the conduction energy levels\cite{PhysRevB.80.155205}.  Within time-dependent density-functional theory (TDDFT), it has been recently proposed~\cite{PhysRevB.82.235201} an approach to calculate the second-harmonic generation (SHG) in semiconductors that takes into account as well crystal local-field and excitonic effects. However, this promising approach~\cite{Cazzanelli2012} is limited by the treatment of the electron correlation to systems with weakly bound excitons.~\cite{LRC} 
@@ -102,7 +102,7 @@ Now we will present a real-time \ai approach to nonlinear optical properties for
 
 %Regarding the electron-field coupling we assume classic fields and use the dipole approximation, $H^{\efield}(t)=e\efield(t)\hat r$ ($-e$ is the electronic charge).  However, because of the PBC the position operator is ill-defined. In order to obtain a form for the field coupling operator compatible with  Born-von K\'arm\'an PBC, in this chapter we use the Berry's phase formulation of the position operator and  consequently the polarisation. As proved in Ref.~\cite{souza_prb}, in this formulation the solutions of  $H(t)$ are also in a Bloch function form: $\phi_{\kk,n}(\rr,t) = \mathrm{exp}(i\kk\cdot\rr) v_{\kk,n} (\rr,t)$, with  $v_{\kk,n}$ being the periodic part and $n$ being the band index. Notice that, even in the Berry's phase formulation, for very strong fields and with the number of $\kk$-points that goes to infinity the Hamiltonian Eq.~\ref{eq:startH} is unbounded from below due to the Zener tunnelling.\cite{springborg} Nevertheless the strength of the fields used in non-linear optics is well below this limit.\cite{springborg,souza_prb}\\
 %In Sec.~\ref{ss:fldcpl} we detail how, by starting from the Berry's phase formulation of polarisation, we  obtain the EOMs in presence of an external electric field within PBC.                 
-\subsection{Treatment of the field coupling term and equations of motion}\label{ss:fldcpl}
+\subsubsection{Treatment of the field coupling term and equations of motion}\label{ss:fldcpl}
 %In this section we take a different path to obtain the KSV polarisation. 
 Now we sketch how to erive the EOMs for the electron in an extended system coupled with an external electric field in lenght gauge. We start from the many-body polarisation operator proposed by R. Resta in Ref.~\cite{PhysRevLett.80.1800}.
 Developed in the mid-90s the Modern Theory of Polarisation\cite{RevModPhys.66.899} provides a correct definition for the macroscopic bulk polarisation, not limited to the perturbative regime, in terms of the many-body geometric phase 
@@ -139,25 +139,12 @@ Now that we a have a formula to calculate the polarization we can write down the
 	\label{eq:lagrangian_discrete} 
 \ee
 where $E^0$ is the energy functional corresponding to the zero-field Hamiltonian, and the last term $v \efield\cdot\PP$ is the coupling between the external field and the polarization.\\ 
-The corresponding the Hamiltonian from the Euler-Lagrange equations:
-\bea
-\frac{d}{dt}
-\frac{\delta \cal L}{ \langle \delta \dot{v}_{\kk,n} |}-\frac{\delta \cal L}{\langle \delta v_{\kk,n} |} &=&0,\\
-i\hbar \frac{d}{dt} |v_{\kk n}\rangle -
-\hat H_\kk^0 |v_{\kk n}\rangle -N_\kk v \efield\cdot\frac{\delta \PP}{\langle \delta v_{\kk,n} |} &=&0.
-\label{eq:euler-lagrange_b}
-\eea
-following the derivation of Souza et al.~\cite{souza_prb} one gets: 
+The corresponding Hamiltonian can obtained from the Euler-Lagrange equations and reads:~\cite{souza_prb} 
 \be
 i\hbar  \frac{d}{dt}| v_{\kk,m} \rangle = \left(\hat H_\kk^0 + \hat w_\kk(\efield) +\hat w^\dagger_\kk(\efield) \right)| v_{\kk,m} \rangle. \label{eom}
 \ee
-where field coupling operator is defined as:
-\begin{align}
-\hat w_\kk(\efield) =\frac{ief}{4 \pi}\sum_m \sum_{\alpha=1}^3 \left(\lv_\alpha\cdot\efield\right)N_{\kk_\alpha} \sum_{\sigma=\pm} \sigma |\tilde v_{\kk^\sigma_\alpha,m} \rangle\langle v_{\kk,m}|. 
-\label{eq:fldcpl}
-\end{align}
-Note that Eq.~\eqref{eq:fldcpl} contains a term proportional to $\frac{1}{2\Delta\kk_\alpha}\left( | \tilde v_{\kk^{+}_\alpha,n} \rangle - | \tilde v_{ \kk^{-}_\alpha,n} \rangle\right)$  that has the form of the two-points central finite difference approximation of $\partial_{\kk_\alpha}|v_{\kk_\alpha}\rangle$. Notice that $|\tilde v_{\kk^{\pm}}\rangle$ are built from the $|v_{\kk^{\pm}}\rangle$  in such a way that they transform as $|v_\kk\rangle$ under a unitary transformation $U_{\kk,nn'}$ and so the derivative is well defined.\cite{souza_prb} 
-\subsection{Treatment of electron correlation}\label{ss:correff}
+where field coupling operator $ \hat w_\kk(\efield)$  contains a term proportional to $\frac{1}{2\Delta\kk_\alpha}\left( | \tilde v_{\kk^{+}_\alpha,n} \rangle - | \tilde v_{ \kk^{-}_\alpha,n} \rangle\right)$  that has the form of the two-points central finite difference approximation of $\partial_{\kk_\alpha}|v_{\kk_\alpha}\rangle$. Notice that $|\tilde v_{\kk^{\pm}}\rangle$ are built from the $|v_{\kk^{\pm}}\rangle$  in such a way that they transform as $|v_\kk\rangle$ under a unitary transformation $U_{\kk,nn'}$ and so the derivative is well defined.\cite{souza_prb} 
+\subsubsection{Treatment of electron correlation}\label{ss:correff}
 %In the previous sections we described a general approach to study real-time response in solids within the independent particle approximation. However is well known, that  
 Correlation effects play a crucial role in both linear\cite{Onida} and non linear\cite{PhysRevB.82.235201,PhysRevB.80.155205} response of solids. %% To simplify Eq.~\eqref{limit} we restricted the choice of $\HH^0_\kk$, thus of possible correlation effects, so that the system wavefunction $|\Psi_0\rangle$ can be written as a single Slater determinant. 
 Since we assumed that $|\Psi_0\rangle$ in Eq.~\eqref{limit} can be written as a single Slater determinant, effects beyond the IPA can be introduced in $\hat H^0$ through an effective time-independent one-particle operator that can be either spatially local as in time-dependent density functional theory, or spatially non-local as in time-dependent Hartree-Fock. 
@@ -196,7 +183,7 @@ In the linear response limit the TDH is usually referred as Random-Phase approxi
 
 Beyond the TDH approximation one has the TD-Hartree-Fock that includes the response of the exchange term to fluctuations of the density matrix $\gamma$. As discussed above this level of approximation is insufficient for optical properties of semiconductors, normally worsening over TDH results. 
 The next step is thus to consider a screened exchange term in which the relevant electron correlation is introduced as a static screening term.~\cite{strinati} The latter is calculated for the unperturbed KS system and is fixed to its initial value.
-We refer to this level of approximation as TD screened exchange or TD screened Hartree-Fock (TD-SHF),
+We refer to this level of approximation as TD-BSE, also known in other works as  TD screened Hartree-Fock (TD-SHF):
 \bea
 \HH_{mb} (t) &=& \hh_{\kk} + \Delta \hh_{\kk} + \UU_{\kk} +\VV_{\kk}^H[\rho-\rho_0]+ \SiS_{\kk}^{\text {cohsex}}[\gamma-\gamma_0].
 \label{mbhamiltonian}
@@ -228,7 +215,7 @@ Notice that all correlation terms we included in the Hamiltonian are Hermitian a
 %% In the screened exchange we keep the screening fix to its initial value, while we update the density matrix $\hat \rho$ at each step of the dynamics, for more details see ref.~\cite{attaccalite}. In this article we will present results only with Eq.~\eqref{tdbse_ip} and \eqref{tdbse_hartree}. In fact even if TDSHF is not difficult to implement, it is very computer demanding\cite{attaccalite} and we are developing advanced techniques to speed up Eq.~\eqref{tdbse_shf} that will be discussed in a sequent paper.\\
 %% 
 % 
-\section{Computational scheme}\label{sc:compdet}
+\subsection{Computational scheme}\label{sc:compdet}
 According the response function one is interested in, different way to analize the results can be deviced. For example in the  second/third harmonic generation case we perturb our system with  a monochromatic electric field $\efield(t) = \efield_0 \sin(\omega_L t)$ at different frequencies and then we suppose that thanks to the dephasing after some time the  polarisation $\PP(t)$ is a periodic function of period $T_L =\frac{2\pi}{\omega_L}$, where $\omega_L$ is the frequency of the external perturbation and can be expanded in a Fourier series
 \be\label{eq:frrexp}
 \PP(t) = \sum_{n=-\infty}^{+\infty} \pp_n e^{-i\omega_n t},
@@ -240,154 +227,39 @@ with $\omega_n = n \omega_L$, and complex coefficients $\pp_n$ are related to th
 \caption{\footnotesize{Pictorial representation of the signal analysis in the post-processing step. The signal  $P(t)$ (red line) can be divided into two regions: an initial convergence region (up to $t\gg 1/\gamma_{deph}$) in which the eigenfrequencies of the systems are ``filtered out'' by dephasing and a second region where Eq.~\eqref{eq:frrexp} holds. In this second region the signal $P(t)$ is sampled within a period $T_L=2\pi/\omega_L$ to extract the $P^\alpha_i$ coefficients of Eq.~\ref{eq:fouinv}. Note that $P(t)$ is not a realistic one: for illustration purposes we enhanced the second-harmonic signal that otherwise would not be visible on this scale.}} 
 \label{fg:ptanalysis}
 \end{figure} 
-Instead for the two-photon absorption, since we are search a response function at the same frequencies of the incoming laser we
+
+The approach is different for the two-photon absorption. In this case since we are search a response function at the same frequencies of the incoming laser we cannot use the above mentioned scheme, but we have to subtract the linear response contribution. This is done by performing simulations with different laser intensities and then  resort to a Richardson extrapolation to extract the contribution we are interested in.\cite{attaccalite2018two} Other scheme are possible for different response functions and/or pump and probe configurations.
+\subsection{Results}\label{sc:results}
 \begin{figure}[ht]
 \centering
 \epsfig{figure=Figures/SiC_absX2_QPRPA_vs_Luppi.pdf,width=1\textwidth,clip}
 \caption{\footnotesize{Magnitude of $\chi^{(2)}(-2\omega,\omega,\omega)$ for bulk SiC calculated within the IPA (black triangles) and QPA (red circles) $(a)$ panel and RPA (red circles) $(b)$ panel. Each point corresponds to a real-time simulation at the given laser frequency (see Sec.~\ref{sc:compdet}). Comparison is made with results obtained \ai by direct evaluation of the $\chi^{(2)}$ in Ref.~\cite{PhysRevB.82.235201} in IPA (grey solid line) and QPA (brown dashed line) $(a)$  panel and RPA (brown dashed line) $(b)$ panel.  \label{fg:SiCQPRPA} [Figure from Ref.\cite{nloptics2013}]}}
 \end{figure}
-\section{Results}\label{sc:results}
 %                                                                                                                     
-The main objective of this section is to validate the computational approach described in Secs.~\ref{sc:theory} and \ref{sc:compdet} against results in the literature for SHG obtained by the response theory in frequency domain. In particular we chose to validate against results from Refs.~\cite{PhysRevB.82.235201,PSSB.427.1984} on bulk SiC and AlAs in which the electronic structures is obtained---as in our case---from a pseudo-potential plane-wave implementation of Kohn-Sham DFT with the local density approximation, which makes the comparison easier.
-In the following we considered the zinc-blende structure of SiC and AlAs for which the $\susc 2$ tensor has only one independent nonzero component, $\susc 2_{xyz}$ (or its equivalent by permutation).
-
-Figure \ref{fg:SiCQPRPA} show results for the magnitude of SHG in SiC at the IPA, QPA and TDH level of theory. 
-At all levels of approximation we obtained an excellent agreement with the results in Ref.~\cite{PhysRevB.82.235201}. The minor discrepancies between the curves are due to the different choice for the $\kk$-grid used for integration in momentum space: we used a $\Gamma$-centred uniform grid (for which we can implement the numerical derivative) whereas Ref.~\cite{PhysRevB.82.235201} used a shifted grid. Figure~\ref{fg:AlAsQPRPA} shows results for the magnitude of SHG in AlAs at the IPA, QPA and TDH level of theory. 
-Also in this case results obtained from our real-time simulations agree very well with the reference results and again the small differences between the spectra can be ascribed mostly to the different grid for $\kk$-integration.
-As side results we can also observe the effects of different levels of approximation for the Hamiltonian on the SHG spectrum. In order to interpret those spectra note that SHG resonances occur when either $\omega_L$ or $2\omega_L$ equals the difference between two single-particle energies. Then one can distinguish two energy region: below the single-particle minimum direct gap where only resonances at $2\omega_L$ can occur, and above where both $\omega_L$ or $2\omega_L$ resonances  can occur.\\
-Regarding the quasi-particle corrections to the IPA energy levels by a scissor operator, below the minimum Kohn-Sham direct band gap the IPA spectrum is shifted by half of the value of the scissor shift (0.4 eV for SiC and 0.45 eV for AlAs) and the spectral intensity reduced by a factor 1.18 (SiC) and  1.25 (AlAs). Above the minimum Kohn-Sham direct band gap instead the QPA spectrum cannot be simply obtained by shifting and renormalizing the IPA one because of the occurrence of resonances at $\omega_{L}$, that are shifted and renormalised differently.\\  
-Regarding the crystal local field, their global effect is to reduce the intensity with respect to the IPA. For SiC, the intensity is reduced by about 15\% below the gap, while above the band gap TDH and IPA have similar intensities. For AlAs we observe a reduction of about 30\% in intensity for the whole range of considered frequencies, but for frequencies larger than 4 eV (that is where the $\omega_L$ resonances with the main optical transition occur) for which again the TDH and IPA have similar intensities.
-\begin{figure}[ht]
-\centering
-\epsfig{figure=Figures/AlAs_absX2_QPRPA_vs_Luppi.pdf,width=1\textwidth,clip}
-\caption{\footnotesize{Magnitude of $\chi^{(2)}(-2\omega,\omega,\omega)$ for bulk AlAs calculated within the IPA (black triangles) and QPA (red circles) $(a)$ panel and RPA (red circles) $(b)$ panel. Each point corresponds to a real-time simulation at the given laser frequency (see Sec.~\ref{sc:compdet}). Comparison is made with results obtained \ai by direct evaluation of the $\chi^{(2)}$ in Refs.~\cite{PhysRevB.82.235201,PSSB.427.1984} in IPA (grey solid and dot-dashed line) and QPA (brown dashed and dotted line) $(a)$ panel and RPA (brown dashed and dotted line) $(b)$ panel. \label{fg:AlAsQPRPA} [Figure from Ref.\cite{nloptics2013}] }}
-\end{figure}
-\subsection{Second Harmonic Generation in h-BN and MoS$_2$ monolayers}
-In this section we apply the TD-BSE to study second harmonic generation(SHG) in two dimensional crystals.\cite{attaccalite2015strong,gruning2014erratum,PhysRevB.89.081102}
-In recent years hexagonal boron nitride (h-BN) and the rich family of transition metal di-chalcogenides, has attract the attention of the scientific community for the possible applications to optoelectronics and photonics.\cite{doi:10.1021/nn403159y,PhysRevB.87.201401}
-Low dimensionality is responsible for the unique electronic and optical properties of 2D crystals, but at the same time is their limiting factor: because of the extremely short optical absorption length the light-matter interaction in absolute terms is inherently weak, though relatively very strong.\cite{doi:10.1021/nn403159y} Therefore ongoing research focuses on finding out physical mechanisms to enhance the SHG in those materials. 
-
-
+Here we present some result performed with the computation scheme presented in previous sections.
+At the beginning our computational approach has been validated by direct comparison with calculation in frequencies domain. For example in Fig. ~\ref{fg:SiCQPRPA} we compared our calculations of SHG in SiC and AlAs against the results from Refs.~\cite{PhysRevB.82.235201,PSSB.427.1984}. We found a perfect agreement for SHG in different approximation IPA, QP, TD-Hartree.  Similar comparison has been performed also for third harmonic generation versus simple models and experimental results, see Ref.~\ref{nloptics2013}.\\
+Using the methodology developed in the previous section the SHG in many two-materials from h-BN and MoS$_2$, SiC etc. has been studied.\cite{attaccalite2015strong,wei2019second,beach2020strain,mishra2020exciton,attaccalite2019second} The optical absorption of two-dimensional crystals is dominated strongly bound excitons. They offect a perfect test-case for the study of excitonic effects in the non-linear response.
+Here we present the simple case of h-BN.
 \begin{wrapfigure}{l}{0.4\textwidth}
-    \vspace{-0.7cm}
 \begin{center}
 \includegraphics[width=0.4\textwidth]{Figures/exciton}
 \caption{\footnotesize{Schematic representation of  (a) the SHG within the IPA, or (b) accounting for electron-hole interaction. In (a) SHG is given simply by transitions between the valence (blue) and conduction (yellow) manifolds; in (b) electron-hole may lead to the formation of a bound exciton, an atomic-like level (dark red) into the fundamental band gap that strongly modifies the SHG. \label{schemeshg}}}  
 \end{center}
 \end{wrapfigure}   
 
-On a more fundamental level, SHG is extremely interesting since it allows to probe symmetries and excitations not visible in the linear regime\cite{doi:10.1021/nl401561r,kumar2013second}.   In both cases it is %it may be 
-important to have the support and guide from the theory through accurate and reliable numerical simulations.
-
-
-
-Using the methodology developed in the previous chapters we investigate the SHG in h-BN and MoS$_2$ monolayers, two materials with promising applications in optoelectronic and photonic devices. These two materials share an hexagonal 2D structure but their electronic and optical properties are quite different. The optical absorption of h-BN is dominated by two very bright and strongly bound excitons.\cite{PhysRevLett.96.126104,PhysRevLett.100.189701} Instead the optical absorption of MoS$_2$ is characterised by a weakly bound exciton, split by spin-orbit coupling,\cite{PhysRevLett.105.136805} and by a brighter exciton in the continuum at about 3~eV.\cite{molina2013effect} 
-
-The interpretation of the linear optical properties of these materials has been possible through \emph{ab initio} calculations (e.g. Refs.~\cite{molina2013effect,PhysRevLett.100.189701}). These computational studies captured the peculiar nature of excitons in nanostructures\cite{scholes2006excitons} by the inclusion of the relevant correlation effects.
-%In particular state-of-the-art calculations employ the combination of the Bethe-Salpeter equation\cite{strinati} in static ladder approximation with the $GW$ quasiparticle corrections\cite{Aulbur1996,noteGW} on the band structure (BSE+$GW$) that accurately and efficiently describes the electron-hole interaction\cite{strinati}---the fundamental process in exciton formation. 
-
-
-In contrast, large part of calculations of nonlinear optical properties employ the independent particle approximation\cite{guo2005second,margulis2013optical} (IPA) which are inadequate for low dimensional systems (see Fig.~\ref{schemeshg}).\cite{scholes2006excitons} 
-%From a theoretical point of view, calculations of the optical response beyond the linear regime still remain a challenge.
-%Different approaches have been proposed to include effects beyond the IPA. 
-%Local field effects have been included\cite{PhysRevB.34.3700} to take into account crystal inhomogeneities, but only few works tackled the problem of correlation. 
-%In fact, the approaches developed within response theory to study neutral excitations in the linear regime, such as Many-Body perturbation theory or Time-dependent Density Functional Theory (TDDFT), become extremely involved when applied to the non-linear response.\cite{Leitsmann2005,PhysRevA.83.062122,PhysRevB.61.8341,Adolph1998,Chang2002,PhysRevB.80.165318,PhysRevB.82.235201} Within Many-body perturbation theory the diagrams that enter in the calculation of the second and third order susceptibilities, 
-%$\chi^{(2)}$ and $\chi^{(3)}$, 
-%are so intricate that their implementation becomes awkward if not impracticable (see for instance Fig.~3 of Ref.~\cite{PhysRevB.80.165318}). Even within the ``simpler'' TDDFT, equations for the second order optical response has been solved only for particular approximations of the exchange-correlation functional,\cite{PhysRevB.82.235201} or have been limited to the static response.\cite{kirtman:1294}
-
-%On the other hand, correlation effects can easily be included into real-time approaches, in which the response functions are obtained from the time propagation of ``simpler'' objects as the single particle Green's function, the density matrix or the density.\cite{takimoto:154114}
-%However these approaches have been often limited to finite systems, such as atoms, molecules or clusters, since the calculation of the bulk polarization in solids poses additional challenges: when imposing periodic boundary conditions (PBC) the full polarization cannot be expressed in term of an Hermitian operator but it is related to the variation of the Berry's phase.\cite{KSV1}
-
-%In the chapters we combined Modern Theory of Polarization\cite{RevModPhys.66.899} with Time-dependent Bethe-Salpeter(TD-BSE)\cite{strinati} into an \emph{ab-initio} approach to calculate non-linear response in solids beyond the IPA. In particular in the linear response limit this approach corresponds to the BSE+$GW$,\cite{attaccalite} so successful for optical properties of low dimensional materials (see Chapters~\ref{chapterberry} and \ref{chaptercorr}). 
-In order to investigate the contribution of correlation effects on the SHG spectra of h-BN and MoS$_2$ monolayers, we use the TD-BSE approach developed in this chapter. For both materials we disclose the signature of bound excitons and show that excitonic effects not only significantly modify the shape of the spectrum with respect to the IPA, but strongly enhance its intensity. In the conclusions we comment how this finding may open the possibility of engineering the SHG signal in these materials. 
-
-%For the MoS$_2$ layer we used the experimental lattice constant of the bulk MoS$_2$ as in Ref.~\cite{molina2013effect} and an inter-layer distance of 30 a.u. The electron-ion term was approximated using norm conserving pseudo-potentials and exchange correlation term using the Perdew, Burke and Ernzerhof functional [Phys. Rev. Lett. 77, 3865 (1996)]. The $GW$ correction of $0.72~eV$  was taken from Ref.~\cite{molina2013effect}. The screened Coulomb interaction was calculated using 100 bands and a cutoff of 2 Ha on the dielectric matrix dimensions. SHG was obtained using a $21\times21\times1$ k-point grid, 18 bands within IPA and TDH, and bands between the 3$^\text{rd}$ and the 16$\text{th}$ for the TDSHF.
-
-
-%Calculations of the Kohn-Sham band structure for the zero-field systems are performed with the pseudopotential planewave code {\sc Abinit},~\cite{abinit} while SHG spectra are calculated using a develop version of the{\sc Yambo} code,~\cite{yambo} where Eqs.~\eqref{tdbse_shf}-\eqref{berryP} have been implemented.
-%Working with a planewave basis set, we simulate isolated monolayers by a slab supercell approach with large inter-sheet distance. 
-%Eq.~\eqref{tdbse_shf} is numerical integrated with a time-step of $\Delta t = 0.0025$~fs, that guarantees accuracy and stable results. In order to reproduce experimental conditions we use a laser intensity of $I = 500~$kW/cm$^2$, we add a dephasing term with $\tau=6$~fs in Eq.~\ref{tdbse_shf} to simulate a finite broadening of about $0.2~eV$,\cite{nloptics2013} and propagate Eq.~\eqref{tdbse_shf} for $55$~fs for each laser frequency.
-
-
-
-\subsubsection{Results}
-In order to simulate isolated hexagonal-BN and MSo$_2$ monolayers we used a supercell approach with a large distance between the sheets. Then we propagate the time-dependent Schr\"odinger equation with the Hamiltonian derived in Eq.~\ref{mbhamiltonian}. Non-linear coefficients are obtained from the real-time polarisation [Eq~\ref{berryP2} ] as described in chapter~\ref{chapterberry} and all numerical details are presented in Ref.~\cite{PhysRevB.89.081102}. 
-
-\subsubsection{h-BN monolayer}
-%As illustrated in the previous section we obtained the second harmonic response from the time propagation of the Eq.~\eqref{tdbse_shf}.  By excluding or including the different terms in the right side of this equation we can  investigate their effect on the second harmonic response. We start our discussion from the h-BN sheet. 
 Hexagonal Boron-Nitride is a transparent insulating material with a large band gap of about $6~eV$. Its optical properties are dominated by strong bound excitons and they are nearly independent from the layers arrangement.\cite{PhysRevLett.96.126104,PhysRevLett.100.189701} The single layer h-BN inherits all these properties from its bulk counterpart.
 \begin{figure}[H]
-    \vspace{-0.32cm}
     \centering
 \includegraphics[width=0.5\textwidth]{Figures/eps_and_X2}
-    \vspace{-0.85cm}
 \caption{\footnotesize{SHG spectra for the h-BN monolayer at different levels of theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (blue continuous line) and TDH (green dashed line); (c) IPA + GW correction (blue continuous line); (e) TD-BSE (blue continuous line) and IPA (grey dashed line). The imaginary part of the dielectric constant at both $\omega/2$ (red continuous line) and $\omega$ (red dashed line) is reported in (b), (d) and (f) for IPA, TDH and TD-BSE respectively. (f) also reports the LRC spectrum (blue dotted-dashed line) whose intensity has been reduced by a factor 0.5 for presentation reasons. The vertical lines represent the $GW$ fundamental gap (green dashed line) and half of the $GW$ fundamental gap (green continuous line). \label{absX2bn} [Figure from Ref.\cite{PhysRevB.89.081102}]}}
 \end{figure}
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{Figures/IPX2}
-\caption{\footnotesize{SHG for the h-BN monolayer within the IPA: the real (red dashed line) and the imaginary (blue continuous line) part of the calculated $\chi^{(2)}_{aab}$ are compared with the real (green dashed-dotted line) and imaginary part (green dotted line) of the $\chitwo$ obtained by Guo and Lin.\cite{guo2005second}[Figure from Ref.\cite{PhysRevB.89.081102}]}\label{X2bn}}
-\end{figure}
 In Fig.~\ref{absX2bn} we report the calculated absolute value of $\chi^{(2)}_{aab} (\omega)$ at different levels of approximation. $\chi^{(2)}_{aab} (\omega)$, where $a$ and $b$ are the in-plane Cartesian directions, is the only independent in-plane component of $\chi^{(2)} (\omega)$: all other components can be obtained from the $\chi^{(2)}_{aab} (\omega)$ with simple symmetry considerations, for instance $\chi^{(2)}_{bbb} (\omega)=-\chi^{(2)}_{aab} (\omega)$. 
-
 At IPA level [Fig.~\ref{absX2bn}(a)], the SHG presents a peak at $2.3~eV$ and a broad structure between $4 - 7 eV$. By comparison with the imaginary part of the dielectric constant $\epsilon_2$ both at $\omega/2$ and  $\omega$ [Fig.~\ref{absX2bn}(b)] calculated at the same level of theory, we can attribute the peak at $2.3~eV$ to two-photon resonances with $\pi \to \pi^*$ transitions, and the broad structure mostly to one-photon resonances with $\pi \to \pi^*$ transitions, with contributions around $7 eV$ of two-photon resonances with $\sigma \to \sigma^*$ transitions.
-
- 
-
-
 This level of theory is the one usually employed in theoretical calculations of SHG: in fact results for the h-BN monolayer were previously obtained by Guo and Lin:~\cite{guo2005second} Fig.~\ref{X2bn} shows a very good agreement between our results and those obtained in Ref.~\cite{guo2005second}. In the following we show how effects beyond the IPA---that is the additional terms in Eq.~\eqref{mbhamiltonian}---modify the SHG spectrum.        
-
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=.7\textwidth]{Figures/absX2MoS2}
-\caption{\footnotesize{SHG in the MoS$_2$ monolayer at different levels of the theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (red squares), (b) TDH (blue circles) and (c) TD-BSE (green squares). The latter is compared with IPA (red dashed line) and experimental results of Malard et al.\cite{PhysRevB.87.201401} (black circles). Since the experimental SHG is measured relatively to the substrate, we renormalized the experimental spectrum to match the intensity of the $~ 1.5 eV$ peak in the calculated spectrum. The grey dotted vertical lines indicate the energy of half of the Kohn-Sham band gap in (a) and (b), and of  half of the $GW$ band gap in (c).[Figure from Ref.\cite{PhysRevB.89.081102}] }\label{fg:SHMoS2}}
-\end{figure} 
-
-
 We start by adding crystal local field effects, included at the TDH level [Fig.~\ref{absX2bn}(a)]. Because of the weak in-plane inhomogeneity of the h-BN, local field effects are quite small---though they are not negligible as for the absorption spectrum  [Fig.~\ref{absX2bn}(b)]---and results in the reduction of about 20\% of the peak at $2.3~eV$. Next we consider the renormalization of the band structure by quasiparticle corrections within the $GW$ approximation (IPA+$GW$) [Fig.~\ref{absX2bn}(c)]. For h-BN this renormalization can be safely approximated by a rigid shift of the conduction bands. Differently from the absorption spectrum [Fig.~\ref{absX2bn}(d)], the SHG is not simply shifted by $GW$ corrections, but its shape changes remarkably as a consequence of the more involved poles structure of the second order susceptibility.~\cite{PhysRevB.82.235201,hughes1996calculation}
 In fact, the IPA+$GW$ shows two peaks: the first at about $4~eV$ is the shifted two-photon $\pi \to \pi^*$  resonances peak which is attenuated by 40\% with respect to IPA  [Fig.~\ref{absX2bn} (a)]; the second very pronounced peak at about $8~eV$ comes from the interference of  $\pi \to \pi^*$  one-photon resonances and  $\sigma \to \sigma^*$ two-photon resonances.  
-
 Finally, in Fig.~\ref{absX2bn}(e) we consider the full Hamiltonian in Eq.~\eqref{mbhamiltonian}. In particular we add the self-energy terms that introduces an attractive interaction between the excited electrons and holes\cite{strinati}. The SHG spectrum presents four sharp and strong peaks and its onset is red-shifted by about $1~eV$ with respect to the the IPA+$GW$ [Fig.~\ref{absX2bn} (c)]. By comparing with the imaginary part of the dielectric constant $\epsilon_2$ both at $\omega/2$ and  $\omega$ [Fig.~\ref{absX2bn} (f)] calculated at the same level of theory, the two couples of peaks can be identified respectively as the two- and one-photon resonances with the excitons at $6$ and $7~eV$.  Fig.~\ref{absX2bn}(e) also shows again the SHG within the IPA to emphasise the striking difference between the two spectra: the TD-BSE spectrum presents features that are missing in IPA and more importantly is twice as strong than IPA at the exciton resonances. 
-
-%Excitonic peaks are well visible, well below the band gap, in the optical spectra (see panel $d)$ of Fig.~\ref{absX2bn}). They are responsible for the high efficient luminescence in h-BN crystals.\cite{watanabe} Here we show that excitonic effects appear also in the second order response. Resonances with the first bound exciton gives rise to the first peak in the second harmonic (Fig.~\ref{absX2bn} panels $c)$ and $d)$). Moreover also the second exciton is clearly visible in the SHG because resonances with this exciton are the cause of the second peak in $|\chi^{(2)}|$. The electron-hole interaction not only change the position of the peaks in the SHG but strongly enhanced their intensity. At the resonance the first peak is two times stronger than the IPA case. This
-%is one of the main finding of this paper, that resonances
-%between bound excitons can enhanced the SHG signal in
-%low dimensional materials, as we demonstrated for the h-BN.
-
-
-%\begin{center}
-%\begin{table}[h]
-%\small
-%\begin{tabular}{c|cc|c|c|c}
-%\hline
-%$|\chi^{(2)}_{aab} (0)| $ (pm/V) & \multicolumn{2}{c|}{IPA} & TDH & IPA+G$_0$W$_0$ & TD-BSE  \\
-%\hline
-% h-BN &  57.1(3)  & [40.7] & 48.5(5) &  21.8(1)  & 46.9(2)  \\
-%\hline
-%MoS$_2$  &  &     &               &     &   \\
-%\hline
-%%\end{tabular}
-%%\caption{$\omega\rightarrow 0$ limit of $\chi^{(2)}_{aab} (-2\omega,\omega,\omega)$ of the h-BN monolayer at different levels of the theory [Eq.~\eqref{mbhamiltonian}]. As a comparison, for the IPA we report in square brackets also the value obtained in Ref.~\cite{guo2005second}.\label{tab1}}  
-%\end{table}
-%\end{center} 
-
-In  Table~\ref{tab1} we report  the value of the second optical susceptibility at $\omega=0$, $\chi^{(2)}(\omega \to 0)$, extrapolated from the SHG  behaviour at small frequencies.    
-Again, at the IPA level our result agrees with the one of Guo and Lin\cite{guo2005second} within the error bar. Adding the effects beyond IPA, modifies the $\chi^{(2)}(\omega \to 0)$ value, and in particular within TD-BSE we found a value smaller by about 10\% than at the IPA level.
-
 Excitonic effects in SHG spectrum have been treated as well in a TD-DFT framework\cite{PhysRevB.82.235201} by using the so-called long-range-corrected (LRC) approximation,\cite{LRC} a semi-empirical simple model for the screened electron-hole attraction, that includes only the long-range part of the interaction. In Fig.~\ref{absX2bn}(f) we see the $\epsilon_2$ calculated within the LRC approximation: as earlier recognised, this approximation fails for strong excitons. In fact by tuning the empirical parameter for the screening we could get the position of the first exciton, though its intensity is strongly overestimated (see caption of Fig.~\ref{absX2bn}), but in no way we could get the second excitonic peak. Those pitfalls would be reflected in the SHG spectrum, though we did not test it in our approach. Then clearly the h-BN monolayer and similar low dimensional materials with strong excitonic effects cannot be treated within the approach proposed in Ref.~\cite{PhysRevB.82.235201}.
-
-\subsubsection{MoS$_2$ monolayer}
-MoS$_2$ differs from h-BN in several aspects. First, while the h-BN has an indirect minimum band gap as its bulk counterpart, in MoS$_2$ an indirect-to-direct band gap transition occurs passing from the bulk to the monolayer due to the vanishing interlayer interaction.  Second, spin-orbit coupling plays an important role in this material, splitting the top valence bands, as visible from the absorption spectrum, presenting a double peak at the onset.\cite{PhysRevLett.105.136805} Third, Mo and S atoms in the MoS$_2$ monolayer are on different planes resulting in a larger inhomogeneity than for the h-BN.
-Figure~\ref{fg:SHMoS2} presents the SHG spectra $|\chi^{(2)}_{aab}|$  at the different level of approximations of Eq.~\eqref{mbhamiltonian}. At the lowest IPA level [Fig.~\ref{fg:SHMoS2} (a)], the SHG presents three main features: a small peak at 1~eV, which originates from two-photon resonances with transitions close to the minimum gap at the $K$ point; a larger peak around $1.5$~eV, which originates from two-photon resonances with transitions along the high symmetry axis between $\Gamma$ and $K$ where the highest valence and lowest conduction bands are flat and there is a high density of states; a broad structure between $2-3.5$~eV which originates from one-photon resonances with transitions at $K$ and along $\Gamma-K$ and two-photon resonances with transitions to higher conduction bands. Note that we do not include spin-orbit coupling in Eq.~\eqref{mbhamiltonian}. 
-The latter is expected to split the lowest peak into two weaker sub-peaks~\cite{molina2013effect}, but to leave unaffected the second peak, the most important when it comes to applications and central to our analysis.\cite{PhysRevB.87.201401}  
-Because of the quite strong inhomogeneity of the MoS$_2$ monolayer, the addition of crystal local field effects within the TDH strongly modifies the SHG  [Fig.~\ref{fg:SHMoS2} (b)]. 
-In particular the main peak at $1.5$~eV merges with the plateau at $2$~eV while a peak appears around $3.3$~eV.
-%Could be added, but refs are needed: local fields affects transitions between $\Gamma$ and $K$ that involve both Mo d and S p, while transitions at K, atomic-like, localized on Mo, not affected 
-Finally, within the TD-BSE, we add the quasi-particle effects and electron-hole interaction  [Fig.~\ref{fg:SHMoS2} (c)]. The small shoulder around $1$~eV, below half of the $GW$ gap (1.25 eV, grey dotted vertical line in the figure), originates from two-photon resonances with the bound excitons around $2$~eV which are well visible in the experimental absorption spectra.\cite{PhysRevLett.105.136805}  The main peak at about $1.5$~eV, present in the IPA spectrum but washed out by local field effects within the TDH, is restored by the electron-hole interaction and its intensity is two times larger than in the IPA case. This peak corresponds to a two-photon resonance with the bright exciton at 3~eV observed in the absorption spectrum,\cite{molina2013effect} and its position and shape agrees well with the experimental measurements of Malard et al.\cite{PhysRevB.87.201401} for the SHG between $1.2-1.7$~eV, also reported in Fig.~\ref{fg:SHMoS2}(c). The calculated spectrum also shows a strong one-photon resonance with this exciton at 3~eV.
-With respect to h-BN, where the IPA is clearly inadequate when compared with the TD-BSE [Fig.~\ref{absX2bn}(e)], here IPA and TD-BSE  presents similar features, at approximately the same position [Fig.~\ref{fg:SHMoS2} (c)]. In fact, this different behaviour could be expected from the linear optical response of these materials, as discussed in the Introduction. Nevertheless, also in this case the electron-hole interaction proved to be key for SHG as it doubles the intensity of the main peak in the visible range, the one that is relevant for applications in nonlinear optics.     	
 
 \section{Conclusions}\label{conclusion}                                        
 In this chapter we presented an \ai real-time approach to calculate nonlinear optical properties of extended systems in the length gauge. The key strengths of the proposed approach are first, the correct treatment of the coupling between electrons and the external field and second the possibility to include easily correlation effects beyond the IPA.
