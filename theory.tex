@@ -2,39 +2,39 @@
 \label{chapterberry}
 \section{Why do we need Berry's phase?}
 %In this work we use dynamical Berry's phase to calculate the non-linear response in extended systems. 
-This section presents a simple introduction to the problem of polarisation definition in extended systems and how it can be solved by means of Berry's phase concept.
-\begin{wrapfigure}{r}{0.5\textwidth}
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{Figures/wrong_polarization2}
-  \end{center}
-  \caption{Surface contribution to the polarisation in a solid. \label{surfacepol}}
-\end{wrapfigure}
+%This section presents a simple introduction to the problem of polarisation definition in extended systems and how it can be solved by means of Berry's phase concept.
+%\begin{wrapfigure}{r}{0.5\textwidth}
+%  \begin{center}
+%    \includegraphics[width=0.4\textwidth]{Figures/wrong_polarization2}
+%  \end{center}
+%  \caption{Surface contribution to the polarisation in a solid. \label{surfacepol}}
+%\end{wrapfigure}
 For many years an unsolved problem in solid state physics was the correct definition of polarisation in periodic systems.
 This definition is intrinsically related to the one the dipole operator, that is a problematic object for extended systems.
 In the literature different wrong definitions of bulk polarisation have been proposed that we will not cite here\cite{restanotes}.
-In order to understand the problem, let's start the discussion from the polarisation in isolated systems.
-In a system with open boundary conditions, the dipole operator is well defined and therefore one can write down the polarisation as:
-\be
-\PP = \frac{e \langle \vec \rr \rangle}{V} = \frac{e}{V}\int \vec \rr n (\rr) d \rr,
+%In order to understand the problem, let's start the discussion from the polarisation in isolated systems.
+%In a system with open boundary conditions, the dipole operator is well defined and therefore one can write down the polarisation as:
+%\be
+%\PP = \frac{e \langle \vec \rr \rangle}{V} = \frac{e}{V}\int \vec \rr n (\rr) d \rr,
 \label{polisolated}
-\ee
-where $n(\rr)$ is the electronic density.
-The simplest idea for the definition of the polarization in periodic systems would be to generalise the previous formula. The integral in Eq.~\ref{polisolated} can be redefined in different possible ways in periodic systems. We can average the dipole operator on the whole material or consider its unit cell. In the first case we obtain $ \PP = \langle \vec \rr \rangle_{sample}/V_{sample}$. In an insulator the contributions from the dipoles inside the material cancel each other (as one can see from  Fig.~\ref{immerse}) and only the surfaces contribute to the total polarisation (see Fig.~\ref{surfacepol}):                              
-\be
-\Delta \PP = \frac{(\Delta \sigma L^2) L }{L ^3},
-\label{polsurface}
-\ee
-where $\Delta \sigma$ is related to the charges accumulated on the surfaces.\cite{vanderbilt1993electric} 
-This definition [Eq.~\ref{polsurface}] is not suitable for numerical calculations because it requires the simulation of the entire sample and moreover the above defined polarisation is not a bulk property but it depends from the surfaces.\\ 
-The second possibility is to define the polarisation as  $ \PP = \langle \vec \rr \rangle_{cell}/V_{cell}$. But this definition is completely arbitrary. In fact different choices of the unit cell give completely different polarisations for the same material, see Fig.~\ref{cellpol}. A last possibility exists, the use of the dipole matrix elements in terms of Bloch orbitals, but also in this case there is problem since the dipole operator is unbounded in periodic systems.\\
-\begin{wrapfigure}{l}{0.5\textwidth}
-    \vspace{-0.7cm}
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{Figures/wrong_polarization1}
-  \end{center}
-  \caption{Polarisation vector versus the choice of the unit cell. \label{cellpol} }
-\end{wrapfigure}
-Finally let mention that also the well know Clausius-Mossotti formula for the polarisability\cite{Mossotti} cannot be used in real solids because wave-functions are not localised objects.\\
+%%\ee
+%where $n(\rr)$ is the electronic density.
+%The simplest idea for the definition of the polarization in periodic systems would be to generalise the previous formula. The integral in Eq.~\ref{polisolated} can be redefined in different possible ways in periodic systems. We can average the dipole operator on the whole material or consider its unit cell. In the first case we obtain $ \PP = \langle \vec \rr \rangle_{sample}/V_{sample}$. In an insulator the contributions from the dipoles inside the material cancel each other (as one can see from  Fig.~\ref{immerse}) and only the surfaces contribute to the total polarisation (see Fig.~\ref{surfacepol}):                              
+%\be
+%\Delta \PP = \frac{(\Delta \sigma L^2) L }{L ^3},
+%\label{polsurface}
+%\ee
+%where $\Delta \sigma$ is related to the charges accumulated on the surfaces.\cite{vanderbilt1993electric} 
+%This definition [Eq.~\ref{polsurface}] is not suitable for numerical calculations because it requires the simulation of the entire sample and moreover the above defined polarisation is not a bulk property but it depends from the surfaces.\\ 
+%The second possibility is to define the polarisation as  $ \PP = \langle \vec \rr \rangle_{cell}/V_{cell}$. But this definition is completely arbitrary. In fact different choices of the unit cell give completely different polarisations for the same material, see Fig.~\ref{cellpol}. A last possibility exists, the use of the dipole matrix elements in terms of Bloch orbitals, but also in this case there is problem since the dipole operator is unbounded in periodic systems.\\
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%    \vspace{-0.7cm}
+%%  \begin{center}
+%    \includegraphics[width=0.4\textwidth]{Figures/wrong_polarization1}
+%%%  \end{center}
+%  \caption{Polarisation vector versus the choice of the unit cell. \label{cellpol} }
+%\end{wrapfigure}
+%Finally let mention that also the well know Clausius-Mossotti formula for the polarisability\cite{Mossotti} cannot be used in real solids because wave-functions are not localised objects.\\
 Two reasons make polarisation definition so difficult in solids. First the dipole operator is ill defined in periodic systems, because $\vec \rr$ is not periodic while wave-functions are. Second, differently from finite systems, the polarisation cannot be expressed as an integral on the charge density\cite{Martin1998}.
 This second aspect can be better understood if we write down the general relation between polarisation and density:
 \be
@@ -79,7 +79,7 @@ A correct definition of the polarisation operator in systems with PBC has been i
 To our knowledge different schemes for calculating the electron-field coupling consistently with PBC have been proposed in Refs.~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical}. In those works the dipole matrix elements are evaluated numerically from the derivative in the crystal-momentum ($\kk$) space. The latter cannot be carried out trivially because of the freedom in the gauge of the periodic part of the Bloch functions. In fact, the gauge freedom leads to spurious phase differences in the Bloch functions at two neighbouring $\kk$ points and ultimately to spurious contributions to the numerical derivative.
 Then, basically the four schemes~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical} differ in how the gauge is fixed to eliminate the spurious phase.
 
-This chapter presents a real-time \ai approach to nonlinear optical properties for extended systems with PBC in which the nonlinear optical susceptibility are obtained through Eq.~\eqref{eq:peopbf}. To derive the EOMs we follow the scheme of Souza et al.\cite{souza_prb} based on the generalisation of Berry's phase to the dynamical polarisation (Sec.~\ref{ss:fldcpl}). Originally applied to a simple tight-binding Hamiltonian, this approach is valid for any single-particle Hamiltonian and, as we discuss in Sec.~\ref{ss:correff}, it can be applied in an \ai context with inclusion of the relevant many-body effects. After detailing on how nonlinear optical susceptibility is extracted from the dynamical polarisation (Sec.~\ref{sc:compdet}), we show results for the second-harmonic generation (SHG) in semiconductors (Sec.~\ref{sc:results}) and successfully validate them against existing results from the literature obtained by response theory in frequency domain.   
+Now we will present a real-time \ai approach to nonlinear optical properties for extended systems with PBC in which the nonlinear optical susceptibility are obtained through Eq.~\eqref{eq:peopbf}. To derive the EOMs we follow the scheme of Souza et al.\cite{souza_prb} based on the generalisation of Berry's phase to the dynamical polarisation (Sec.~\ref{ss:fldcpl}). Originally applied to a simple tight-binding Hamiltonian, this approach is valid for any single-particle Hamiltonian and, as we discuss in Sec.~\ref{ss:correff}, it can be applied in an \ai context with inclusion of the relevant many-body effects. After detailing on how nonlinear optical susceptibility is extracted from the dynamical polarisation (Sec.~\ref{sc:compdet}), we show results for the second-harmonic generation (SHG) in semiconductors (Sec.~\ref{sc:results}) and successfully validate them against existing results from the literature obtained by response theory in frequency domain.   
    
 %The Berry phase was introduced in the context of the , a theory that deals with the definition of static bulk polarisation for many-electron correlated systems and noncrystalline systems, by showing that the correct coupling of the electronic wavefunction with the electric field is through a geometric many-body phase operator. 
 
