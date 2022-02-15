@@ -104,7 +104,7 @@ Now we will present a real-time \ai approach to nonlinear optical properties for
 %In Sec.~\ref{ss:fldcpl} we detail how, by starting from the Berry's phase formulation of polarisation, we  obtain the EOMs in presence of an external electric field within PBC.                 
 \subsubsection{Treatment of the field coupling term and equations of motion}\label{ss:fldcpl}
 %In this section we take a different path to obtain the KSV polarisation. 
-Now we sketch how to derive the EOMs for the electron in an extended system coupled with an external electric field in lenght gauge. We start from the many-body polarisation operator proposed by R. Resta in Ref.~\cite{PhysRevLett.80.1800}.
+Now we sketch how to derive the EOMs for the electron in an extended system coupled with an external electric field in lenght gauge. We start from the many-body polarisation operator proposed by R. Resta in Ref.~\onlinecite{PhysRevLett.80.1800}.
 Developed in the mid-90s the Modern Theory of Polarisation\cite{RevModPhys.66.899} provides a correct definition for the macroscopic bulk polarisation, not limited to the perturbative regime, in terms of the many-body geometric phase 
 \be 
 %\langle X \rangle &=& \frac{L}{2\pi}
@@ -123,11 +123,11 @@ The polarization defined by the Eq.~\ref{limit} is valid for any many-body wavef
 %, where $L=N_{\kk} a$ and $a$ is the lattice vector. 
 
 By using the assumption that the wave-function can be written as a single Slater determinant,
-the expectation value of the many-body geometric phase in Eq.~\eqref{limit} can be writen in terms of overlaps between two single Slater determinants at different k-points:\cite{resta1999electron}
+the expectation value of the many-body geometric phase in Eq.~\eqref{limit} can be writen in terms of overlaps between two single Slater determinants at adjacent k-points:\cite{resta1999electron}
 \bea 
 \mathbf P_\alpha = -\frac{ef}{2 \pi v} \frac{\mathbf a_\alpha}{N_{\kk_\alpha^\perp}} \sum_{\kk_\alpha^\perp} \mbox{Im} \sum_{i=1}^{N_{\kk_\alpha}-1}\ \mbox{tr ln } S(\kk_i , \kk_i + \qq_\alpha) \label{xtrace}
 \eea
-where  $S_{mn}(\kk , \kk + \qq_\alpha) = \langle v_{\kk,m} | v_{\kk + \qq_\alpha,n} \rangle$ in the overlaps matrix between the wave-function at $\kk$ and $\kk+\qq$.  
+where  $S_{mn}(\kk , \kk + \qq_\alpha) = \langle v_{\kk,m} | v_{\kk + \qq_\alpha,n} \rangle$ is the overlaps matrix between the wave-function at $\kk$ and $\kk+\qq$.  
 % \be
 %\mathbf P_\alpha =  i\frac{ef}{2\pi} \frac{1}{N_{\kk_\perp}} \sum_{\kk_\perp} \sum_{\kk_\alpha}^{N_{\kk_\alpha}-1} \sum_{m=1}^{M} \langle v_{\kk,m} | \partial_k v_{\kk,m} \rangle + O(\mathbf q^2). \label{mypolarisation} 
 %\ee
@@ -194,7 +194,7 @@ Limitations may arise because of the computational cost of calculating those add
 %In this chapter effects beyond IPA are limited to the QPA and TDH.
 
 Finally, when the wave-function cannot be approximated anymore with a single Slater determinant (as in strong-correlated systems) the evaluation of the polarisation operator [Eq.~\ref{limit} ] becomes quite cumbersome.\cite{stella} Also we are not aware of any successful attempt to combine Berry's phase polarisation with Green's function theory or density matrix kinetic equations beyond the screened Hartree-Fock approximation (i.e. including scattering terms), even if some appealing approaches have been proposed in the literature\cite{restagw,PhysRevB.84.205137,doi:10.7566/JPSJ.83.033708,nourafkan2013electric}.\\
-Notice that all correlation terms we included in the Hamiltonian are Hermitian and static, therefore they do not provide any dephasing effect in the dynamics. In order to describe dephasing due to electronic correlation, scattering with phonons, and experimental broadening we included a non-Hermitian operator that depend from a parameter, as described in Ref.~\onlinecite{nloptics2013}.
+Notice that all correlation terms we included in the Hamiltonian, Eq.~\ref{mbhamiltonian}, are Hermitian and static, therefore they do not provide any dephasing effect in the dynamics. In order to describe dephasing due to electronic correlation, scattering with phonons, and experimental broadening we included a non-Hermitian operator that depend from a parameter, as described in Ref.~\onlinecite{nloptics2013}.
 %time-dependent screened Hartree-Fock (TDSHF),\cite{strinati} where the single particle energies have been shifted to reproduce the $G_0W_0$ quasiparticle band structure. ADD SOME EQUATIONS
 %% Correlation among electrons can be included at different level of accuracy. As starting point we consider a system of independent particle where the energy levels have been renormalized by the electron-electron interaction:
 %% \bea
