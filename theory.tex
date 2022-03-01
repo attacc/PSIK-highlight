@@ -40,15 +40,21 @@ This second aspect can be better understood if we write down the general relatio
 \be
 \nabla \cdot \PP(\rr) = - n(\rr).
 \ee                              
-In finite systems we impose the condition  $\PP(\rr) \rightarrow 0 $ outside the sample (Dirichlet boundary condition) and $\int n(\rr) d\rr=0$.
+In finite systems we impose the condition  $\PP(\rr) \rightarrow 0 $ outside the sample (Dirichlet boundary condition) and {\color{red}DS: is this equation correct?} $\int n(\rr) d\rr=0$. 
 In periodic system, it is most useful to resolve the previous equation into Fourier components $\qq+ \GG$,
 where $\GG$ denotes a reciprocal lattice vector and $\qq$ belongs to the first Brillouin zone(BZ):
 \be
 (\qq + \GG) \cdot \PP(\qq + \GG) = i n (\qq + \GG).
 \label{poldens}
 \ee
-It follows from Eq.~\ref{poldens} that each Fourier component can be treated separately. Now let us consider the limit $\GG=0$ and $\qq \rightarrow 0$. In this limit  the macroscopic polarisation $\PP$ is not determined anymore by the zero Fourier component of the density, which must vanish by charge neutrality.  Thus in the limit $\qq = 0$ for an infinite crystal, the polarisation contains additional information not included in the density.\cite{Martin1998} \\
+It follows from Eq.~\ref{poldens} that each Fourier component can be treated separately. Now let us consider the limit $\qq \rightarrow 0$ for $\GG=0$. In this limit  the macroscopic polarisation $\PP$ is not determined anymore by the zero Fourier component of the density, which must vanish by charge neutrality.  Thus in the limit $\qq = 0$ for an infinite crystal, the polarisation contains additional information not included in the density.\cite{Martin1998} \\
+{\color{red}DS: Here I think we should distinguish the dipole of the molecule from the Polarization, i.e. the dipole per unit volume. Indeed the latter equation holds true also for isolated systems, but the point is that the G=0 term is zero in isolated systems. Right? If we do not want to go through this distinction we should re-phrase a bit.} \\
 The problem of a correct definition of polarisation in periodic systems was solved in 1993 by  King-Smith and Vanderbilt.\cite{KSV1} In their seminal paper they shown that  bulk polarisation can be expressed as a closed integral in the Brillouin zone on the wave-function phase, a particular case of the Berry's phase. Their formulation solved all problems with the previous attempts to define the polarisation. In fact the King-Smith and Vanderbilt(KSV) polarisation is a bulk quantity, its time derivative gives the current and its derivatives respect to the external field reproduce the polarisabilities at all orders.
+
+
+{\color{red}DS: up to here.}
+
+%*******************************************************************
 \subsection{Response functions and bulk polarization}
 \emph{Ab-initio} approaches based on Green's function theory became a standard tool for quantitative and predictive calculations of linear response optical properties in Condensed Matter. In particular, the state-of-the-art approach combines the $G_0W_0$ approximation for the quasi-particle band structure~\cite{aryasetiawan1998gw} with the Bethe-Salpeter equation in static ladder approximation for the response function.~\cite{strinati} This approach proved to effectively and accurately account for the essential effects beyond independent particle approximation (IPA) in a wide range of electronic systems, including extended systems with strong excitonic effects.~\cite{Onida}
 
