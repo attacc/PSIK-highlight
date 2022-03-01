@@ -1,6 +1,9 @@
-
+%*********************************************************
 \section{Introduction to the non-linear optics} 
+%*********************************************************
 
+
+%*********************************************************
 \subsection{What is non-linear optics?}
 When you immerse a solid, either an insulator or a semiconductor, in an electric field (see Fig. \ref{immerse}), the dipoles inside the material get orientated along the field lines and create an internal field, 
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -15,7 +18,7 @@ The total electric field inside the solid $\EEc(\rr,t)$ is the sum of the extern
 \EEc(\rr,t) = \DDc(\rr,t) - \PPc(\rr,t).
 \label{materialeq}
 \ee
-This equation is one of the so-called  "Materials equations", namely the Maxwell equations for electric and magnetic fields in bulk materials, where $\DDc(\rr,t)$ is the Electric Displacement and $ \EEc(\rr,t)$ is the Total Electric Field. %In order to understand the origin of these two fields, it is possible to write down their corresponding Gauss's equations:
+This equation is one of the so-called  ``Materials equations", namely the Maxwell equations for electric and magnetic fields in bulk materials. $\DDc(\rr,t)$ is the Electric Displacement and $ \EEc(\rr,t)$ is the Total Electric Field. %In order to understand the origin of these two fields, it is possible to write down their corresponding Gauss's equations:
 %\ben
 %\nabla \DDc(\rr,t)  = \frac{\rho_{ext}(\rr,t)}{\epsilon_0} \mbox{ , } \nabla \EEc(\rr,t)  = \frac{\rho_{tot}(\rr,t)}{\epsilon_0}. 
 %\een
@@ -25,7 +28,7 @@ In general one can expand the polarisation  $\PPc$ in a power series of the tota
 \PPc = \PPc_0 + \chi^{(1)} \EEc + \chi^{(2)} \EEc^2 + \chi^{(3)} \EEc^3 + ....
 \label{pexpansion}
 \ee
-where $\PPc_0$ is the intrinsic polarisation of the material and  $\chi^{(1)}, \chi^{(2)},...$ are the response functions of increasing order. Equation~\ref{pexpansion} is valid for a wide range of situations. However there are cases where this expansion fails: 1) for very strong fields, beyond the convergence radius of the expansion\cite{lee2014first}; 2) when there is an hysteresis and therefore there is not a univocal relation between polarisation and electric field; 3) close a to phase transition where a small external field can completely change the material properties. In this highlight we will not consider any of these cases but we will concentrate on the "simpler" one, when the relation between polarisation and electric field can be written in a power series.\\ 
+where $\PPc_0$ is the intrinsic polarisation of the material at zero Electric field, and $\chi^{(1)}, \chi^{(2)},...$ are response functions of increasing order. Equation~\ref{pexpansion} is valid for a wide range of situations. However, there are cases where this expansion fails: 1) for very strong fields, beyond the convergence radius of the expansion\cite{lee2014first}; 2) when there is an hysteresis, and therefore there is not a univocal relation between polarisation and electric field; 3) close a to phase transitions, where a small external field can drastically change the material properties. In this highlight we will not consider any of these cases, but we will concentrate on the ``simpler" ones, for which the relation between polarisation and electric field can be written in a power series. \\ 
 %Moreover in the present work we will always assume $\PPc_0=0$ because we are not interested in materials with intrinsic polarisation as for instance ferroeletrics.\\
 %\begin{figure}[ht]
 %  \begin{center}
@@ -34,16 +37,18 @@ where $\PPc_0$ is the intrinsic polarisation of the material and  $\chi^{(1)}, \
 %  \caption{The original photographic image of the SHG with the corresponding caption from the Franken's paper\cite{franken1961generation}. \label{frankenfig}} % (Onestly I don't see anything below the arrow)
 %\end{figure}
 %Now we introduce the concept of non-linear optics. 
-If in Eq.~\ref{pexpansion} we limit the power series to the first term $\chi^{(1)}$ we can describe all the phenomena which belong to the linear optics regime. All the other terms  $\chi^{(2)}, \chi^{(3)},.... $  describe the non-linear response, that will be the topic of this highlight. \\
-What does non-linear response mean in practice?  The simplest non-linear phenomena, we obtain from the additional terms,  can be easily understood if we rewrite Eq.~\ref{pexpansion} in frequency domain for an homogeneous material:
+The first term $\chi^{(1)}$ of the power series describes all the phenomena which belong to the linear optics regime. All the other terms  $\chi^{(2)}, \chi^{(3)},.... $  describe the non-linear response, that will be the topic of this highlight. \\
+What does non-linear response mean in practice?  The simplest non-linear phenomena, we obtain from the additional terms,  can be easily understood if we rewrite Eq.~\ref{pexpansion} in frequency domain. For an homogeneous material we obtain:
 \be
 \PPc(\omega) = \chi^{(1)} (\omega) \EEc(\omega)  + \chi^{(2)} (\omega = \omega_1 + \omega_2) \EEc(\omega_1) \EEc(\omega_2) + ....
 \label{pexpomega}
 \ee
-From the first term of the RHS we immediately realise that the outgoing light [i.e. the polarisation $\PPc (\omega)$] has the same frequency $\omega$ of the incoming one [i.e. the electric filed $\EEc (\omega)$] in the linear regime. On the contrary terms beyond the first one contain sums or differences of many electric fields and therefore the outgoing light could have a different frequency, namely a colour different from the incoming one.  For example in the second harmonic generation(SHG), the outgoing light has a frequency that is two times larger than the incoming one. \\
-This simple effect, even it is easy to understand and visualise, it is not something evident in our everyday lives. In fact the non-linear coefficients of the polarisation expansion are very small, and therefore in order to obtain a detectable non-linear response one needs a strong light source. This is the reason why the first experimental measurement of second-harmonic generation (SHG) dates 1961\cite{franken1961generation}, just few years after the laser invention.\cite{maiman1960stimulated} In this first experiment of non-linear optics Franken and his collaborators were able to obtain a SHG signal from a ruby crystal employing a monochromatic laser beam with an intensity of $10^5$ volts/cm.\\ % see Fig.~\ref{frankenfig}.\\
-Nowadays lasers with an intensity equivalent to the one used in the Franken's experiment are commercial available in shops, and SHG became a common technique to double the laser frequency.\\
-Of course non-linear optics is not limited to the SHG but the different terms cover a large spectra of phenomena spanning from optical saturation, sum frequency generation, high harmonic and so on. In the next section we will show some applications of non-linear response and then how can be calculated from first-principle.
+In the first term (linear regime) on the RHS, the outgoing light [i.e. the polarisation $\PPc (\omega)$] has the same frequency $\omega$ of the incoming one [i.e. the electric filed $\EEc (\omega)$]. On the contrary, terms beyond the first one contain frequency sum or frequency difference terms, for which the outgoing light has a different frequency (or colour), different from the incoming one.  For example in the second harmonic generation(SHG), the outgoing light has a frequency that is two times the incoming one. \\
+This simple effect, despite being easy to understand and visualize, is not something evident in our everyday lives. In fact the non-linear coefficients of the polarisation expansion are very small. In order to obtain a detectable non-linear response one needs a strong light source. This is the reason why the first experimental measurement of second-harmonic generation (SHG) dates 1961~\cite{franken1961generation}, just few years after the laser invention.~\cite{maiman1960stimulated} In this first experiment of non-linear optics, Franken and his collaborators were able to obtain a SHG signal from a ruby crystal employing a monochromatic laser beam with an intensity of $10^5$ volts/cm.\\ % see Fig.~\ref{frankenfig}.\\
+Nowadays lasers with an intensity equivalent to the one used in the Franken's experiment are commercially available in shops, and SHG became a common technique to double the laser frequency.\\
+Of course, non-linear optics is not limited to the SHG. Higher order terms cover a large spectra of phenomena, spanning from optical saturation, sum frequency generation, high harmonic and so on. In the next section we will show some applications of non-linear response, and then how these applications can be described from first-principles.
+
+%*********************************************************
 \subsection{What can be done with non-linear optics?} 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{center}
@@ -51,7 +56,7 @@ Of course non-linear optics is not limited to the SHG but the different terms co
   \end{center}
   \caption{Schematic of the green laser pointer. \label{greenlaser}}
 \end{wrapfigure}
-In the last thirty years the field of non-linear spectroscopy\cite{bloembergen1982nonlinear} made progresses in leaps and bounds. The simplest commercial application that everybody knows, is the green laser pointer used in conferences. In this device the green light is obtained combining a red laser with a non-linear crystal that doubles the frequency, see Fig.~\ref{greenlaser}. Nowadays non-linear crystals are routinely used in laboratories to change shape, length and intensity of laser beams. \\
+In the last thirty years, the field of non-linear spectroscopy~\cite{bloembergen1982nonlinear} made progresses in leaps and bounds. One of the most common commercial application is the green laser pointer. Many of us uses it when giving talks. In this device the green light is obtained combining a red laser with a non-linear crystal that doubles the frequency ()see Fig.~\ref{greenlaser}). Nowadays non-linear crystals are routinely used in laboratories to change shape, length and intensity of laser beams. \\
 %              \begin{wrapfigure}{l}{0.4\textwidth}
 %    \vspace{-0.7cm}
 %  \begin{center}
@@ -59,19 +64,19 @@ In the last thirty years the field of non-linear spectroscopy\cite{bloembergen19
 %  \end{center}
 %  \caption{Entangled photons generation. \label{entangled}}
 %\end{wrapfigure}
-        Applications of non-linear optics are not limited to physics but they range from optoelectronics to medicine. \\
-        For example nanocrystals with non-linear properties can be bounded to proteins and then inserted in living systems.
-
+Applications of non-linear optics are not limited to physics but they range from optoelectronics to medicine. %\\
+To cite an example, since biological tissue does not present a particular non-linear response, nanocrystals with non-linear properties can be bounded to proteins and then inserted in living systems to probe protein dynamics.
+%
 %%\begin{wrapfigure}{l}{0.4\textwidth}
 %  \begin{center}
 %    \includegraphics[width=0.4\textwidth]{Figures/ferroelectric}
 %  \end{center}
 %  \caption{Square root of SHG signal changing due to temperature variation, in a BaTiO$_3$ crystal. \label{ferroelectric}}
 %\end{wrapfigure}
-        They become a tool to probe protein dynamics. In fact under intense illumination, such as the focus of a laser-scanning microscope, these SHG nanocrystals modify the light colour and thus they can be imaged by means of the two-photon microscopy. Since biological tissue do not present a particular non-linear response, scientists can visualise the dynamics of the proteins thanks to the nanocrystals.        
-        Unlike commonly used fluorescent probes, SHG nanoprobes neither bleach nor blink. The resulting contrast and detectability of SHG nanoprobes provided therefore unique advantages for molecular imaging of living cells and tissues. \cite{pantazis2010second}
+%They become a tool .
+Under intense illumination, such as the focus of a laser-scanning microscope, these SHG nanocrystals modify the light colour, and they can be imaged by means of the two-photon microscopy. Scientists can then visualise the dynamics of the proteins thanks to the nanocrystals.
+Unlike commonly used fluorescent probes, SHG nanoprobes neither bleach nor blink. The resulting contrast and detectability of SHG nanoprobes provided therefore unique advantages for molecular imaging of living cells and tissues. \cite{pantazis2010second}
 
-  
 In quantum optics, non-linear crystals are used to create entangled photons. A photon at high energy is transformed in two or more photons with lower energy by means of reverse second or third harmonic generation. These news outgoing photons can be used in quantum information studies, quantum cryptography or for quantum computation, due to their entangled states.\cite{PhysRevLett.75.4337}\\ 
 %(see Fig.~\ref{entangled}).\cite{PhysRevLett.75.4337}\\ 
 In condensed matter the non-linear response remains an essential tool to characterise and explore electronic and structural properties of materials. 
