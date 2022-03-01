@@ -10,8 +10,8 @@ Here we present a real-time formalism we developed in the last years to calculat
 %  \caption{Surface contribution to the polarisation in a solid. \label{surfacepol}}
 %\end{wrapfigure}
 For many years an unsolved problem in solid state physics was the correct definition of polarisation in periodic systems.
-This definition is intrinsically related to the one the dipole operator, that is a problematic object for extended systems.
-In the literature different wrong definitions of bulk polarisation have been proposed that we will not cite here\cite{restanotes}.
+This definition is intrinsically related to the one of the dipole operator, that is a problematic object for extended systems.
+In the literature different wrong definitions of bulk polarisation have been proposed that we will not cite here~\cite{restanotes}.
 %In order to understand the problem, let's start the discussion from the polarisation in isolated systems.
 %In a system with open boundary conditions, the dipole operator is well defined and therefore one can write down the polarisation as:
 %\be
@@ -40,8 +40,8 @@ This second aspect can be better understood if we write down the general relatio
 \be
 \nabla \cdot \PP(\rr) = - n(\rr).
 \ee                              
-In finite systems we impose the condition  $\PP(\rr) \rightarrow 0 $ outside the sample (Dirichlet boundary condition) and {\color{red}DS: is this equation correct?} $\int n(\rr) d\rr=0$. 
-In periodic system, it is most useful to resolve the previous equation into Fourier components $\qq+ \GG$,
+In finite systems we impose the condition  $\PP(\rr) \rightarrow 0 $ outside the sample (Dirichlet boundary condition) and $\int n(\rr) d\rr=0$. {\color{red}DS: How is this useful?} \\
+In periodic systems, it is most useful to resolve the previous equation into Fourier components $\qq+ \GG$,
 where $\GG$ denotes a reciprocal lattice vector and $\qq$ belongs to the first Brillouin zone(BZ):
 \be
 (\qq + \GG) \cdot \PP(\qq + \GG) = i n (\qq + \GG).
@@ -51,8 +51,6 @@ It follows from Eq.~\ref{poldens} that each Fourier component can be treated sep
 {\color{red}DS: Here I think we should distinguish the dipole of the molecule from the Polarization, i.e. the dipole per unit volume. Indeed the latter equation holds true also for isolated systems, but the point is that the G=0 term is zero in isolated systems. Right? If we do not want to go through this distinction we should re-phrase a bit.} \\
 The problem of a correct definition of polarisation in periodic systems was solved in 1993 by  King-Smith and Vanderbilt.\cite{KSV1} In their seminal paper they shown that  bulk polarisation can be expressed as a closed integral in the Brillouin zone on the wave-function phase, a particular case of the Berry's phase. Their formulation solved all problems with the previous attempts to define the polarisation. In fact the King-Smith and Vanderbilt(KSV) polarisation is a bulk quantity, its time derivative gives the current and its derivatives respect to the external field reproduce the polarisabilities at all orders.
 
-
-{\color{red}DS: up to here.}
 
 %*******************************************************************
 \subsection{Response functions and bulk polarization}
@@ -78,16 +76,18 @@ This strategy is followed in several real-time implementations of TD-DFT\cite{Ph
 The time-domain approach presents three major advantages with respect to frequency-domain response-based approaches. First, many-body effects are included easily by adding the corresponding operator to the effective Hamiltonian. Second, it is not perturbative in the external fields and therefore it treats optical susceptibilities at any order without increasing the computational cost and with the only limitation dictated by the machine precision. Third, several non-linear phenomena and thus spectroscopic techniques are described by the same EOMs. For instance, by the superposition of several laser fields one can simulate sum- and difference-frequency harmonic generation, or four-waves mixing.\cite{boyd}
 
 %In a recent work,~\cite{attaccalite} we proposed a real-time implementation of the Bethe-Salpeter equation, based on nonequilibrium Green's function formalism.
-This approach has shown very promising results for molecular systems, and has been extended to periodic system within the velocity gauge.\cite{tancogne2020octopus,noda2019salmon} However the velocity gauge presents an intrinsic difficulty because non-local operator in the Hamiltonian cannot be easily since they do not commute with the gauge transformation.\cite{tokman}\\
+This approach has shown very promising results for molecular systems, and has been extended to periodic system within the velocity gauge.\cite{tancogne2020octopus,noda2019salmon} However the velocity gauge presents an intrinsic difficulty because non-local operators in the Hamiltonian cannot be easily managed, since they do not commute with the gauge transformation.\cite{tokman} \\
 Here we present an alternative approach to real-time simulation for extended systems in the length gauge.
-In this gauge due to problematic definition of the position operator and polarization, it is not trivial to apply Eq.~\eqref{eq:peopbf} to systems in which periodic boundary conditions (PBC) are imposed. As it was recognised for example in Ref.~\onlinecite{PhysRevB.52.14636}, the same problem appears in the direct evaluation of the nonlinear optical susceptibility in frequency-response based approaches. In particular the dipole matrix elements between the periodic part of the Bloch functions are ill-defined when using the standard definition of the  position operator. In that case, it is possible to obtain correct expressions for the dipole matrix elements from perturbation theory~\cite{PhysRevB.52.14636,PhysRevB.48.11705,PhysRevB.82.235201,korbel2015optical} at a given order in the external field. Instead, in the real-time approach one needs an expression valid at each order of the perturbation.
+In this gauge, due to problematic definition of the position operator and polarization, it is not trivial to apply Eq.~\eqref{eq:peopbf} to systems in which periodic boundary conditions (PBC) are imposed. As it was recognised for example in Ref.~\onlinecite{PhysRevB.52.14636}, the same problem appears in the direct evaluation of the nonlinear optical susceptibility in frequency-response based approaches. In particular the dipole matrix elements between the periodic part of the Bloch functions are ill-defined when using the standard definition of the  position operator. In that case, it is possible to obtain correct expressions for the dipole matrix elements from perturbation theory~\cite{PhysRevB.52.14636,PhysRevB.48.11705,PhysRevB.82.235201,korbel2015optical} at a given order in the external field. Instead, in the real-time approach one needs an expression valid at each order of the perturbation.
 A correct definition of the polarisation operator in systems with PBC has been introduced by means of the geometric Berry phase in the Modern theory of polarisation.\cite{RevModPhys.66.899} 
-To our knowledge different schemes for calculating the electron-field coupling consistently with PBC have been proposed in Refs.~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical}. In those works the dipole matrix elements are evaluated numerically from the derivative in the crystal-momentum ($\kk$) space. The latter cannot be carried out trivially because of the freedom in the gauge of the periodic part of the Bloch functions. In fact, the gauge freedom leads to spurious phase differences in the Bloch functions at two neighbouring $\kk$ points and ultimately to spurious contributions to the numerical derivative.
-Then, basically the dfferent schemes~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical} differ in how the gauge is fixed to eliminate the spurious phase.
+%To our knowledge 
+Different schemes for calculating the electron-field coupling consistently with PBC have been proposed in Refs.~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical}. In those works the dipole matrix elements are evaluated numerically from the derivative in the crystal-momentum ($\kk$) space. The latter cannot be carried out trivially because of the freedom in the gauge of the periodic part of the Bloch functions. In fact, the gauge freedom leads to random phases, and random linear combination matricies in degenerate spaces. When considering Bloch functions at two neighbouring $\kk$ points, these random terms needs to be properly accounted for, otherwise spurious contributions to the numerical derivative appear.
+Then, basically the dfferent schemes~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical} differ in how these random terms are properly accounted for.
 
-Now we will present a real-time \ai approach to nonlinear optical properties for extended systems with PBC in which the nonlinear optical susceptibility are obtained through Eq.~\eqref{eq:peopbf}. To derive the EOMs we follow the scheme of Souza et al.\cite{souza_prb} based on the generalisation of Berry's phase to the dynamical polarisation. Originally applied to a simple tight-binding Hamiltonian, this approach is valid for any single-particle Hamiltonian and it can be applied in an \ai context with inclusion of the relevant many-body effects.\\
-We will present also a reformulation of the problem in the TD-DFT language, based on Density Polarization Functional Theory. 
-Finally we will discuss how nonlinear optical susceptibilities are extracted from the dynamical polarisation, and present some results for the second, third harmonic generation and two-photon absorption. 
+Here we will present a real-time \ai approach to nonlinear optical properties for extended systems with PBC in which the nonlinear optical susceptibility are obtained through Eq.~\eqref{eq:peopbf}. To derive the EOMs, and account for the random phases of mixing between different k-points, we follow the scheme of Souza et al.\cite{souza_prb} based on the generalisation of Berry's phase to the dynamical polarisation. Originally applied to a simple tight-binding Hamiltonian, this approach is valid for any single-particle Hamiltonian and it can be applied in an \ai context with inclusion of the relevant many-body effects.\\
+We will present also a reformulation of the problem in the TD-DFT language, extending the theory to a functional of the density and the polariazion, TD Density Polarization Functional Theory (DPFT). 
+Finally we will discuss how nonlinear optical susceptibilities are extracted from the dynamical polarisation, and present some results for the second, third harmonic generation and two-photon absorption. \\
+{\color{red} We started with the EOM of the one-body reduced density matrix and on top of it we just discussed TDDFT. We should say few words on why now we are going to change EOM and move to a Lagrangian for QPs. Indeed we are back into a framework for WFs only (i.e. pure states)...}
    
 %The Berry phase was introduced in the context of the , a theory that deals with the definition of static bulk polarisation for many-electron correlated systems and noncrystalline systems, by showing that the correct coupling of the electronic wavefunction with the electric field is through a geometric many-body phase operator. 
 
@@ -109,7 +109,11 @@ Finally we will discuss how nonlinear optical susceptibilities are extracted fro
 %We also assume, as usual in treating cell-periodic systems, Born-von K\'arm\'an PBC and define a regular grid of  $N_\kk=M$  $\kk$-points in the Brillouin zone. With such assumptions, the single-particle solutions of $H^0$ are Bloch-functions.
 
 %Regarding the electron-field coupling we assume classic fields and use the dipole approximation, $H^{\efield}(t)=e\efield(t)\hat r$ ($-e$ is the electronic charge).  However, because of the PBC the position operator is ill-defined. In order to obtain a form for the field coupling operator compatible with  Born-von K\'arm\'an PBC, in this chapter we use the Berry's phase formulation of the position operator and  consequently the polarisation. As proved in Ref.~\cite{souza_prb}, in this formulation the solutions of  $H(t)$ are also in a Bloch function form: $\phi_{\kk,n}(\rr,t) = \mathrm{exp}(i\kk\cdot\rr) v_{\kk,n} (\rr,t)$, with  $v_{\kk,n}$ being the periodic part and $n$ being the band index. Notice that, even in the Berry's phase formulation, for very strong fields and with the number of $\kk$-points that goes to infinity the Hamiltonian Eq.~\ref{eq:startH} is unbounded from below due to the Zener tunnelling.\cite{springborg} Nevertheless the strength of the fields used in non-linear optics is well below this limit.\cite{springborg,souza_prb}\\
-%In Sec.~\ref{ss:fldcpl} we detail how, by starting from the Berry's phase formulation of polarisation, we  obtain the EOMs in presence of an external electric field within PBC.                 
+%In Sec.~\ref{ss:fldcpl} we detail how, by starting from the Berry's phase formulation of polarisation, we  obtain the EOMs in presence of an external electric field within PBC.  
+
+
+
+%*******************************************************************               
 \subsubsection{Treatment of the field coupling term and equations of motion}\label{ss:fldcpl}
 %In this section we take a different path to obtain the KSV polarisation. 
 Here we sketch how to derive the EOMs for the electron in an extended system coupled with an external electric field in length gauge. We start from the many-body polarisation operator proposed by R. Resta in Ref.~\onlinecite{PhysRevLett.80.1800}.
@@ -152,7 +156,11 @@ The corresponding Hamiltonian can obtained from the Euler-Lagrange equations and
 i\hbar  \frac{d}{dt}| v_{\kk,m} \rangle = \left(\hat H_\kk^0 + \hat w_\kk(\efield) +\hat w^\dagger_\kk(\efield) \right)| v_{\kk,m} \rangle. \label{eom}
 \ee
 where field coupling operator $ \hat w_\kk(\efield)$  contains a term proportional to $\frac{1}{2\Delta\kk_\alpha}\left( | \tilde v_{\kk^{+}_\alpha,n} \rangle - | \tilde v_{ \kk^{-}_\alpha,n} \rangle\right)$  that has the form of the two-points central finite difference approximation of $\partial_{\kk_\alpha}|v_{\kk_\alpha}\rangle$. Notice that $|\tilde v_{\kk^{\pm}}\rangle$ are built from the $|v_{\kk^{\pm}}\rangle$  in such a way that they transform as $|v_\kk\rangle$ under a unitary transformation $U_{\kk,nn'}$ and so the derivative is well defined.\cite{souza_prb} 
+
+
+%*****************************************************************
 \subsubsection{Treatment of electron correlation}\label{ss:correff}
+{\color{red} Maybe here we want to specify that we include only correlations which lead to a renormalization of the hamiltonian $H_A$. No lifetimes or similar.} \\
 %In the previous sections we described a general approach to study real-time response in solids within the independent particle approximation. However is well known, that  
 Correlation effects play a crucial role in both linear\cite{Onida} and non linear\cite{PhysRevB.82.235201,PhysRevB.80.155205} response of solids. %% To simplify Eq.~\eqref{limit} we restricted the choice of $\HH^0_\kk$, thus of possible correlation effects, so that the system wavefunction $|\Psi_0\rangle$ can be written as a single Slater determinant. 
 Since we assumed that $|\Psi_0\rangle$ in Eq.~\eqref{limit} can be written as a single Slater determinant, effects beyond the IPA can be introduced in $\hat H^0$ through an effective time-independent one-particle operator that can be either spatially local as in time-dependent density functional theory, or spatially non-local as in time-dependent Hartree-Fock. 
@@ -164,7 +172,8 @@ In the framework of Green's function theory a very successful way to deal with e
 We recently extended this approach to the real-time domain~\cite{attaccalite} by mean of non-equilibrium Green's function theory and derived a single particle Hamiltonian that includes correlation from Green's function theory. %These many-body corrections and their effect on the non-linear properties will be discussed in Chapters~\ref{chaptercorr} and~\ref{chaptertddft}.\\
 %. In practice, the latter approach corresponds to a time-dependent static screened Hartree-Fock operator that satisfies the above-mentioned restrictions on the choice of $\hat H^0$ and thus can be used within the here proposed framework. In what follows, we reformulate the approach in Ref.~\cite{attaccalite} as time-dependent Schr\"odinger like equations [Eq.~\eqref{eom}]. 
 In this section we will show how the so-called local field effects, quasi-particle corrections and excitonic effects enter in our EOMs.\\
-Here as starting point for our real-time dynamics, we choose the Kohn-Sham  Hamiltonian at fixed density as a system of independent particles,~\cite{PhysRev.140.A1133} 
+Here as starting point for our real-time dynamics, we choose the Kohn-Sham  Hamiltonian at fixed density as a system of independent particles,~\cite{PhysRev.140.A1133}  \\
+{\color{red} Do we want to distinguish the density matrix $\rho$ from the density $n$? I see later you use $\gamma$ and $\rho$. In case we go for the latter we should change the EOM at the beginning.} 
 \be
 \hat H^{0,\text{IPA}} \equiv \hat h^{\text{KS}} = -\frac{\hbar^2}{2m}\sum_{i} \nabla_i^2 + \hat V_{eI} + \hat V_{H}[\rho^0]+ \hat V_{\text{xc}}[\rho^0],      
 \label{eq:HIPA}
