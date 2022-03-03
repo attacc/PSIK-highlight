@@ -46,9 +46,8 @@ where $\GG$ denotes a reciprocal lattice vector and $\qq$ belongs to the first B
 (\qq + \GG) \cdot \PP(\qq + \GG) = i n (\qq + \GG).
 \label{poldens}
 \ee
-It follows from Eq.~\ref{poldens} that each Fourier component can be treated separately. Now let us consider the limit $\qq \rightarrow 0$ for $\GG=0$. In this limit  the macroscopic polarisation $\PP$ is not determined anymore by the zero Fourier component of the density, which must vanish by charge neutrality.  Thus in the limit $\qq = 0$ for an infinite crystal, the polarisation contains additional information not included in the density.\cite{Martin1998} \\
-{\color{red}DS: Here I think we should distinguish the dipole of the molecule from the Polarization, i.e. the dipole per unit volume. Indeed the latter equation holds true also for isolated systems, but the point is that the G=0 term is zero in isolated systems. Right? If we do not want to go through this distinction we should re-phrase a bit.} \\
-{\color{green} The problem is the same, if it was possible to define dipoles in periodic systems, one could have definted the polarization, this is done for example in the Wannier rappresentation where one can define the polarization in term of localized objects, similar to Clasius-Massotti, for isolated system G=0 is not zero, because one impose the zero of the density at inifite distance and therefore the dipole and polarization are well defined}
+It follows from Eq.~\ref{poldens} that each Fourier component can be treated separately. Now let us consider the limit $\qq \rightarrow 0$ for $\GG=0$. In this limit  the macroscopic polarisation $\PP$ is not determined anymore by the zero Fourier component of the density, which must vanish by charge neutrality.  Thus in the limit $\qq = 0$ for an infinite crystal, the polarisation contains additional information not included in the density.\cite{Martin1998}
+{\color{blue}The same does not happen in finite systems since $\PP(\GG=0)=0$ due to the above discussed Dirichlet condition.}\\
 The problem of a correct definition of polarisation in periodic systems was solved in 1993 by  King-Smith and Vanderbilt.\cite{KSV1} In their seminal paper they shown that  bulk polarisation can be expressed as a closed integral in the Brillouin zone on the wave-function phase, a particular case of the Berry's phase. Their formulation solved all problems with the previous attempts to define the polarisation. In fact the King-Smith and Vanderbilt(KSV) polarisation is a bulk quantity, its time derivative gives the current and its derivatives respect to the external field reproduce the polarisabilities at all orders.
 
 
@@ -197,14 +196,14 @@ As a second step we consider the effects originating from the response of the ef
 \ee
 In the linear response limit the TDH is usually referred as Random-Phase approximation and is responsible for the so-called crystal local field effects.\cite{PhysRev.126.413} 
 
-Beyond the TDH approximation one has the TD-Hartree-Fock that includes the response of the exchange term to fluctuations of the density matrix $\gamma$. As discussed above this level of approximation is insufficient for optical properties of semiconductors, normally worsening over TDH results. 
+Beyond the TDH approximation one has the TD-Hartree-Fock that includes the response of the exchange term to fluctuations of the density matrix $\rho$. As discussed above this level of approximation is insufficient for optical properties of semiconductors, normally worsening over TDH results. 
 The next step is thus to consider a screened exchange term in which the relevant electron correlation is introduced as a static screening term.~\cite{strinati} The latter is calculated for the unperturbed KS system and is fixed to its initial value.
 We refer to this level of approximation as TD-BSE, also known in other works as  TD screened Hartree-Fock (TD-SHF):
 \bea
-\HH_{mb} (t) &=& \hh_{\kk} + \Delta \hh_{\kk} + \UU_{\kk} +\VV_{\kk}^H[n-n_0]+ \SiS_{\kk}^{\text {cohsex}}[\gamma-\gamma_0].
+\HH_{mb} (t) &=& \hh_{\kk} + \Delta \hh_{\kk} + \UU_{\kk} +\VV_{\kk}^H[n-n_0]+ \SiS_{\kk}^{\text {cohsex}}[\rho-\rho_0].
 \label{mbhamiltonian}
 \eea
-where $ \SiS_{\kk}^{\text {cohsex}}[\gamma-\gamma_0]$ is the screened exchange self-energy\cite{attaccalite} and $\gamma_0$ is density matrix. The density matrix can be reconstruct from the time-dependent valence bands.\cite{nloptics2013}\\
+where $ \SiS_{\kk}^{\text {cohsex}}[\rho-\rho_0]$ is the screened exchange self-energy\cite{attaccalite}, an example of the static correlation $\SiS^{xc,static}$ mentioned in the introduction. $\rho_0$ is the equilibrium density matrix. It can be reconstruct from the time-dependent valence bands.\cite{nloptics2013}\\
 We want to emphasise again that within this approach many-body effects are easily implemented by adding terms to the unperturbed independent-particle Hamiltonian $\hat H^{0,\text{IPA}}$ in the EOMs [Eq.~\eqref{eom}]. 
 Limitations may arise because of the computational cost of calculating those addition terms. In the specific the large number of $\kk$-points needed to converge the SHG and THG spectra makes more correlated approaches impracticable. %However, much less $\kk$-points are needed for converging for example the screened-exchange self-energy itself and currently we are investigating how to exploit this property and devise ``double grid'' strategies similar to the one proposed in Ref.~\cite{kammerlander}. 
 %In this chapter effects beyond IPA are limited to the QPA and TDH.
@@ -238,10 +237,8 @@ An alternative way to include correlation effects in the real-time dynamics is t
 Despite the success of TDDFT in molecular systems, the situation is more complicated in extended system.
 In fact, although other methods, as for instance Green's function theory\cite{strinati}, provide a similar accuracy in extended\cite{Aulbur19991} and finite systems\cite{faber2012electron}, this is not the case of TDDFT.\\
 Due to the lower computational cost of TDDFT respect to Green's function formalism it would be desirable to have the same accuracy in extended and finite systems.\\
-One of the problems of TD-DFT in solids is due to the mapping between currents and densities that requires certain surface integral involving the density and the potential vanishes. For finite systems this condition  can be given rigorously at the surface in which the density vanishes. For a periodic system, one might try to choose a surface around which the density and potential are periodic but for a uniform field the linearity of the potential prevents this, and TDDFT does not apply. \\
+One of the problems of TD-DFT in solids is due to the mapping between currents and densities that requires certain surface integral involving the density and the potential vanishes. For finite systems this condition  can be given rigorously at the surface in which the density vanishes. For a periodic system, one might try to choose a surface around which the density and potential are periodic but for a uniform field the linearity of the potential prevents this, and TDDFT does not apply.\cite{Gonze1995} \\
 The problem of TDDFT in periodic system was also illustrated  by means of a simple example in the paper of Maitra et. al.\cite{maitra2003current}. They considered a free electron gas on a ring subjected to a constant uniform electric field. In this case it is possible to write down the exact solution of the problem. One finds that the electric field modifies only the phase of the single particle orbitals, leaving the density unchanged. This result shows that different electric fields  give rise to exactly the same density and therefore there is not an unique mapping between density and external field.\\
-{\color{red} Wasn't this shown before in the GGG paper?} \\
-{\color{green}  May be yes, but the paper of Maitra is so simple and clear that I want to cite it, we can add a second citation} 
 In order to solve the problems with TD-DFT in periodic systems and extension was presented some years ago, the Time-Dependent Current Density Functional Theory(TD-CDFT)\cite{PhysRevA.38.1149}. This formulation uses the direct mapping between the external potential and the current density, without rely on the continuity equation.\\
 \begin{wrapfigure}{r}{0.5\textwidth}
 %\begin{figure}[h]
