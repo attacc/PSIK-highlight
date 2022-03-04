@@ -12,13 +12,14 @@ When you immerse a solid, either an insulator or a semiconductor, in an electric
   \end{center}
   \caption{A solid immersed in an electric field. \label{immerse}}
 \end{wrapfigure}
-the polarisation $\PPc$, opposite to the field that generates it. This naive picture, even if not correct for extended systems, gives us an idea of the effect of an external electric field on a material.
-The total electric field inside the solid $\EEc(\rr,t)$ is the sum of the external plus the polarisation one:
+the \emph{polarisation} $\PPc$, opposite to the field that generates it. This naive picture, even if valid only for finite systems, gives us an idea of the effect of an external electric field on a material.
+The \emph{total electric field} inside the solid $\EEc(\rr,t)$ is the sum of the external plus the polarisation one:
 \be
-\EEc(\rr,t) = \DDc(\rr,t) - \PPc(\rr,t).
+\EEc(\rr,t) = \DDc(\rr,t) - \PPc(\rr,t),
 \label{materialeq}
 \ee
-This equation is one of the so-called  ``Materials equations", namely the Maxwell equations for electric and magnetic fields in bulk materials. $\DDc(\rr,t)$ is the Electric Displacement and $ \EEc(\rr,t)$ is the Total Electric Field. %In order to understand the origin of these two fields, it is possible to write down their corresponding Gauss's equations:
+where $\DDc(\rr,t)$ is the \emph{electric displacement}.
+This equation is one of the so-called  ``materials equations", namely the Maxwell equations for electric and magnetic fields in bulk materials. %and $ \EEc(\rr,t)$ is the Total Electric Field. %In order to understand the origin of these two fields, it is possible to write down their corresponding Gauss's equations: 
 %\ben
 %\nabla \DDc(\rr,t)  = \frac{\rho_{ext}(\rr,t)}{\epsilon_0} \mbox{ , } \nabla \EEc(\rr,t)  = \frac{\rho_{tot}(\rr,t)}{\epsilon_0}. 
 %\een
@@ -28,7 +29,7 @@ In general one can expand the polarisation  $\PPc$ in a power series of the tota
 \PPc = \PPc_0 + \chi^{(1)} \EEc + \chi^{(2)} \EEc^2 + \chi^{(3)} \EEc^3 + ....
 \label{pexpansion}
 \ee
-where $\PPc_0$ is the intrinsic polarisation of the material at zero Electric field, and $\chi^{(1)}, \chi^{(2)},...$ are response functions of increasing order. Equation~\ref{pexpansion} is valid for a wide range of situations. However, there are cases where this expansion fails: 1) for very strong fields, beyond the convergence radius of the expansion\cite{lee2014first}; 2) when there is an hysteresis, and therefore there is not a univocal relation between polarisation and electric field; 3) close a to phase transitions, where a small external field can drastically change the material properties. In this highlight we will not consider any of these cases, but we will concentrate on the ``simpler" ones, for which the relation between polarisation and electric field can be written in a power series. \\ 
+where $\PPc_0$ is the intrinsic polarisation of the material at zero electric field, and the coefficients $\chi^{(1)}, \chi^{(2)},...$ are response functions of increasing order. Equation~\ref{pexpansion} is valid for a wide range of situations. However, there are cases where this expansion fails: 1) for very strong fields, beyond the convergence radius of the expansion\cite{lee2014first}; 2) when there is an hysteresis, and therefore there is not a univocal relation between polarisation and electric field; 3) close a to phase transitions, where a small external field can drastically change the material properties. In this highlight, we will restrict to the cases in which the expansion in Eq.~\ref{pexpansion} is valid.\\ 
 %Moreover in the present work we will always assume $\PPc_0=0$ because we are not interested in materials with intrinsic polarisation as for instance ferroeletrics.\\
 %\begin{figure}[ht]
 %  \begin{center}
@@ -38,15 +39,16 @@ where $\PPc_0$ is the intrinsic polarisation of the material at zero Electric fi
 %\end{figure}
 %Now we introduce the concept of non-linear optics. 
 The first term $\chi^{(1)}$ of the power series describes all the phenomena which belong to the linear optics regime. All the other terms  $\chi^{(2)}, \chi^{(3)},.... $  describe the non-linear response, that will be the topic of this highlight. \\
-What does non-linear response mean in practice?  The simplest non-linear phenomena, we obtain from the additional terms,  can be easily understood if we rewrite Eq.~\ref{pexpansion} in frequency domain. For an homogeneous material we obtain:
+What does non-linear response mean in practice? We can gain an understanding by rewriting Eq.~\ref{pexpansion} in frequency domain. For an homogeneous material we obtain:
 \be
 \PPc(\omega) = \chi^{(1)} (\omega) \EEc(\omega)  + \chi^{(2)} (\omega = \omega_1 + \omega_2) \EEc(\omega_1) \EEc(\omega_2) + ....
 \label{pexpomega}
 \ee
-In the first term (linear regime) on the RHS, the outgoing light [i.e. the polarisation $\PPc (\omega)$] has the same frequency $\omega$ of the incoming one [i.e. the electric filed $\EEc (\omega)$]. On the contrary, terms beyond the first one contain frequency sum or frequency difference terms, for which the outgoing light has a different frequency (or colour), different from the incoming one.  For example in the second harmonic generation(SHG), the outgoing light has a frequency that is two times the incoming one. \\
-This simple effect, despite being easy to understand and visualize, is not something evident in our everyday lives. In fact the non-linear coefficients of the polarisation expansion are very small. In order to obtain a detectable non-linear response one needs a strong light source. This is the reason why the first experimental measurement of second-harmonic generation (SHG) dates 1961~\cite{franken1961generation}, just few years after the laser invention.~\cite{maiman1960stimulated} In this first experiment of non-linear optics, Franken and his collaborators were able to obtain a SHG signal from a ruby crystal employing a monochromatic laser beam with an intensity of $10^5$ volts/cm.\\ % see Fig.~\ref{frankenfig}.\\
-Nowadays lasers with an intensity equivalent to the one used in the Franken's experiment are commercially available in shops, and SHG became a common technique to double the laser frequency.\\
-Of course, non-linear optics is not limited to the SHG. Higher order terms cover a large spectra of phenomena, spanning from optical saturation, sum frequency generation, high harmonic and so on. In the next section we will show some applications of non-linear response, and then how these applications can be described from first-principles.
+In the first term (linear regime) on the RHS, the outgoing light [i.e. the polarisation $\PPc (\omega)$] has the same frequency $\omega$ of the incoming one [i.e. the electric filed $\EEc (\omega)$]. On the contrary, terms beyond the first one contain frequency sum or frequency difference terms, for which the outgoing light has a different frequency (or colour) from the incoming one.  For example, in the second harmonic generation (SHG), the outgoing light has a frequency that is twice that of the incoming one. \\
+This simple effect, despite evident from the equation, is not something we observe in our everyday lives. In fact, the non-linear coefficients of the polarisation expansion are extremely small. In order to obtain a detectable non-linear response, one needs a sufficiently strong light source. For this reason, the first experimental measurement of second-harmonic generation (SHG) dates 1961~\cite{franken1961generation}, a year after the laser invention.~\cite{maiman1960stimulated} In this first experiment of non-linear optics, Franken and his collaborators were able to obtain a SHG signal from a ruby crystal employing a monochromatic laser beam with an intensity of $10^5$ volts/cm.\\ % see Fig.~\ref{frankenfig}.\\
+Nowadays lasers with an intensity equivalent to the one used in the Franken's experiment are commercially available in shops and SHG is a common technique to double the laser frequency.\\
+Of course, non-linear optics is not limited to the SHG. Nonlinear order terms cover a large spectra of phenomena, such as optical saturation, sum frequency generation, two-photon absorption, generation of higher harmonics. In the next section we will show some applications of non-linear response, and then how these applications can be described from first-principles.
+%taken away: high harmonic and so on => this is a phenomenon where the expansions do fail!!!!!
 
 %*********************************************************
 \subsection{What can be done with non-linear optics?} 
