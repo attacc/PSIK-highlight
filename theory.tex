@@ -1,6 +1,6 @@
 \section{Dynamical Berry's phase and non-linear response} 
 \label{chapterberry}
-Here we present a real-time formalism we developed in the last years to calculate non-linear response of solids.
+The EOMs for density matrix EOMs, Eq.~\ref{eomsimple}], have been very useful to derive analitic expression for the response function at different orders, however their application in the real-time for the non-linear response has been limited due to the difficulties to describe the coupling between light and electron in periodic system. Here we will present an alternativeformalisme based on an effetive Schr\"odinger which overcomes these difficulties.
 \subsection{Why do we need Berry's phase?}
 %In this work we use dynamical Berry's phase to calculate the non-linear response in extended systems. 
 %\begin{wrapfigure}{r}{0.5\textwidth}
@@ -83,9 +83,9 @@ Different schemes for calculating the electron-field coupling consistently with 
 Then, basically the dfferent schemes~\cite{springborg, PhysRevB.76.035213, souza_prb, korbel2015optical} differ in how these random terms are properly accounted for.
 
 Here we will present a real-time \ai approach to nonlinear optical properties for extended systems with PBC in which the nonlinear optical susceptibility are obtained through Eq.~\eqref{eq:peopbf}. To derive the EOMs, and account for the random phases of mixing between different k-points, we follow the scheme of Souza et al.\cite{souza_prb} based on the generalisation of Berry's phase to the dynamical polarisation. Originally applied to a simple tight-binding Hamiltonian, this approach is valid for any single-particle Hamiltonian and it can be applied in an \ai context with inclusion of the relevant many-body effects.\\
-We will present also a reformulation of the problem in the TD-DFT language, extending the theory to a functional of the density and the polariazion, TD Density Polarization Functional Theory (DPFT). 
+We will present also a reformulation of the problem in the TD-DFT language, with a functional that depends both on density polariazion. 
 Finally we will discuss how nonlinear optical susceptibilities are extracted from the dynamical polarisation, and present some results for the second, third harmonic generation and two-photon absorption. \\
-{\color{red} We started with the EOM of the one-body reduced density matrix and on top of it we just discussed TDDFT. We should say few words on why now we are going to change EOM and move to a Lagrangian for QPs. Indeed we are back into a framework for WFs only (i.e. pure states)...}
+%{\color{red} We started with the EOM of the one-body reduced density matrix and on top of it we just discussed TDDFT. We should say few words on why now we are going to change EOM and move to a Lagrangian for QPs. Indeed we are back into a framework for WFs only (i.e. pure states)...}
    
 %The Berry phase was introduced in the context of the , a theory that deals with the definition of static bulk polarisation for many-electron correlated systems and noncrystalline systems, by showing that the correct coupling of the electronic wavefunction with the electric field is through a geometric many-body phase operator. 
 
@@ -207,6 +207,13 @@ We want to emphasise again that within this approach many-body effects are easil
 Limitations may arise because of the computational cost of calculating those addition terms. In the specific the large number of $\kk$-points needed to converge the SHG and THG spectra makes more correlated approaches impracticable. %However, much less $\kk$-points are needed for converging for example the screened-exchange self-energy itself and currently we are investigating how to exploit this property and devise ``double grid'' strategies similar to the one proposed in Ref.~\cite{kammerlander}. 
 %In this chapter effects beyond IPA are limited to the QPA and TDH.
 
+\begin{wrapfigure}{r}{0.5\textwidth}
+%\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth]{Figures/Pt_analysis}
+\caption{\footnotesize{Pictorial representation of the signal analysis in the post-processing step. The signal  $P(t)$ (red line) can be divided into two regions: an initial convergence region (up to $t\gg 1/\gamma_{deph}$) in which the eigenfrequencies of the systems are ``filtered out'' by dephasing. In this second region the signal $P(t)$ is sampled within a period $T_L=2\pi/\omega_L$ to extract the $\pp_n$ coefficients. %Note that $P(t)$ is not a realistic one: for illustration purposes we enhanced the second-harmonic signal that otherwise would not be visible on this scale. 
+	\label{fg:ptanalysis} }} 
+%\end{figure} 
+\end{wrapfigure}
 Finally, when the wave-function cannot be approximated anymore with a single Slater determinant (as in strong-correlated systems) the evaluation of the polarisation operator [Eq.~\ref{limit} ] becomes quite cumbersome.\cite{stella} Also we are not aware of any successful attempt to combine Berry's phase polarisation with Green's function theory or density matrix kinetic equations beyond the screened Hartree-Fock approximation (i.e. including scattering terms), even if some appealing approaches have been proposed in the literature\cite{restagw,PhysRevB.84.205137,doi:10.7566/JPSJ.83.033708,nourafkan2013electric}.\\
 Notice that all correlation terms we included in the Hamiltonian, Eq.~\ref{mbhamiltonian}, are Hermitian and static, therefore they do not provide any dephasing effect in the dynamics. In order to describe dephasing due to electronic correlation, scattering with phonons, and experimental broadening we included a non-Hermitian operator that depend from a parameter, as described in Ref.~\onlinecite{nloptics2013}.
 Approach like the one discussed in Ref.~\onlinecite{nloptics2013} are exact for non interacting electrons. A proper formulation of dephasing beyond the IPA is instead far from trivial within single particle approaches (either density matrix or wave-function based).\cite{sangalli2021excitons}
@@ -236,16 +243,18 @@ An alternative way to include correlation effects in the real-time dynamics is t
 Despite the success of TDDFT in molecular systems, the situation is more complicated in extended system.
 In fact, although other methods, as for instance Green's function theory\cite{strinati}, provide a similar accuracy in extended\cite{Aulbur19991} and finite systems\cite{faber2012electron}, this is not the case of TDDFT.\\
 Due to the lower computational cost of TDDFT respect to Green's function formalism it would be desirable to have the same accuracy in extended and finite systems.\\
+\begin{wrapfigure}{l}{0.4\textwidth}
+%\begin{figure}[ht]
+\centering
+\epsfig{figure=Figures/SiC_absX2_QPRPA_vs_Luppi_half.pdf,width=0.4\textwidth,clip}
+\caption{\footnotesize{Magnitude of $\chi^{(2)}(-2\omega,\omega,\omega)$ for bulk SiC calculated within the IPA (black triangles) and QPA (red circles). Each point corresponds to a real-time simulation at the given laser frequency. Comparison is made with results obtained \ai by direct evaluation of the $\chi^{(2)}$ in Ref.~\cite{PhysRevB.82.235201} in IPA (grey solid line) and QPA (brown dashed line).  \label{fg:SiCQPRPA} }}
+%\end{figure}
+\end{wrapfigure}
+
 One of the problems of TD-DFT in solids is due to the mapping between currents and densities that requires certain surface integral involving the density and the potential vanishes. For finite systems this condition  can be given rigorously at the surface in which the density vanishes. For a periodic system, one might try to choose a surface around which the density and potential are periodic but for a uniform field the linearity of the potential prevents this, and TDDFT does not apply.\cite{Gonze1995} \\
 The problem of TDDFT in periodic system was also illustrated  by means of a simple example in the paper of Maitra et. al.\cite{maitra2003current}. They considered a free electron gas on a ring subjected to a constant uniform electric field. In this case it is possible to write down the exact solution of the problem. One finds that the electric field modifies only the phase of the single particle orbitals, leaving the density unchanged. This result shows that different electric fields  give rise to exactly the same density and therefore there is not an unique mapping between density and external field.\\
 In order to solve the problems with TD-DFT in periodic systems and extension was presented some years ago, the Time-Dependent Current Density Functional Theory(TD-CDFT)\cite{PhysRevA.38.1149}. This formulation uses the direct mapping between the external potential and the current density, without rely on the continuity equation.\\
-\begin{wrapfigure}{r}{0.5\textwidth}
-%\begin{figure}[h]
-	\includegraphics[width=0.5\textwidth]{Figures/Pt_analysis}
-\caption{\footnotesize{Pictorial representation of the signal analysis in the post-processing step. The signal  $P(t)$ (red line) can be divided into two regions: an initial convergence region (up to $t\gg 1/\gamma_{deph}$) in which the eigenfrequencies of the systems are ``filtered out'' by dephasing. In this second region the signal $P(t)$ is sampled within a period $T_L=2\pi/\omega_L$ to extract the $\pp_n$ coefficients. %Note that $P(t)$ is not a realistic one: for illustration purposes we enhanced the second-harmonic signal that otherwise would not be visible on this scale. 
-	\label{fg:ptanalysis} }} 
-%\end{figure} 
-\end{wrapfigure}
+
 
 An alternative to the current based TD-CDFT is the density and polarization based TD-DPFT. In DFTP one uses the relation between polarization and current to construct a theory that relies on density and polarization instead of current density. The possibility to use the polarisation as additional variable beyond the density it is a valid approximation when it is possible to disregard the transverse term of the current. Since we are interested in the optical response in the limit of long-wave length limit, this is a valid approximation. Within the DFTP the Hamiltonian reads:
 \be \label{eq:dpftks}
@@ -257,20 +266,17 @@ The KS macroscopic electric field can be parameterised in different way, startin
 \subsection{Computational scheme}\label{sc:compdet}
 
 In previous sections we have shown how to obtain EOMs in length gauge in extended systems and how to include correlation effects, here we discuss how to extract different non-linear response functions from real-time simulations.\\
-\begin{wrapfigure}{l}{0.4\textwidth}
-%\begin{figure}[ht]
-\centering
-\epsfig{figure=Figures/SiC_absX2_QPRPA_vs_Luppi_half.pdf,width=0.4\textwidth,clip}
-\caption{\footnotesize{Magnitude of $\chi^{(2)}(-2\omega,\omega,\omega)$ for bulk SiC calculated within the IPA (black triangles) and QPA (red circles). Each point corresponds to a real-time simulation at the given laser frequency. Comparison is made with results obtained \ai by direct evaluation of the $\chi^{(2)}$ in Ref.~\cite{PhysRevB.82.235201} in IPA (grey solid line) and QPA (brown dashed line).  \label{fg:SiCQPRPA} }}
-%\end{figure}
-\end{wrapfigure}
 According to the response function one is interested in, different analysis of the real-time polarization will be required. For example in the second/third harmonic generation case we perturb the system with a monochromatic electric field $\efield(t) = \efield_0 \sin(\omega_L t)$ at different frequencies and after some time, thanks to the dephasing term, the  polarisation $\PP(t)$ will be a periodic function of period $T_L =\frac{2\pi}{\omega_L}$, where $\omega_L$ is the frequency of the external perturbation and it can be expanded in a Fourier series as: $ \PP(t) = \sum_{n=-\infty}^{+\infty} \pp_n e^{-i\omega_n t} $, with $\omega_n = n \omega_L$. The complex coefficients $\pp_n$ are related to the different susceptibilities, and they can be obtained by fitting the polarization with the above functional form, as show in Fig.~\ref{fg:ptanalysis}. 
 
+\begin{wrapfigure}[19]{r}{0.5\textwidth}
+    \centering
+\includegraphics[width=0.5\textwidth]{Figures/eps_and_X2_short}
+	\caption{\footnotesize{SHG spectra for the h-BN monolayer at different levels of theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (dashed grey line) and TD-BSE (continuous blue line). The imaginary part of the dielectric constant at both $\omega/2$ (red continuous line) and $\omega$ (red dashed line) is reported in (b) at the  TD-BSE level. The vertical lines represent the $GW$ fundamental gap (green dashed line) and half of the $GW$ fundamental gap (green continuous line). \label{X2bn} }}
+%\end{figure}
+\end{wrapfigure}
 A different approach is used to study the two-photon absorption. In this case since we are searching for a response function at the same frequencies of the incoming laser we cannot use the above mentioned scheme, but we have to subtract the linear response contribution. This is done by performing simulations with different laser intensities and then  resort to a Richardson extrapolation to extract the contribution we are interested in.\cite{attaccalite2018two} Other scheme are possible for different response functions or for example for pump and probe configurations.
 
 \subsection{Results}\label{sc:results}
-
-%                                                                                                                     
 Here we present some example of results obtained with the computational scheme presented in previous sections.
 
 At the beginning our computational approach has been validated by direct comparison with calculations in frequency domain. For example in Fig.~\ref{fg:SiCQPRPA} we compare SHG in SiC calculated from real-time simulations against the results of Refs.~\cite{PhysRevB.82.235201,PSSB.427.1984}. A perfect agreement between the two approaches was found. Similar comparison has been performed also for third harmonic generation versus simple models and experimental results, see Ref.~\onlinecite{nloptics2013}.\\
@@ -284,16 +290,7 @@ Excitonic effects has been studies also in two-photon absorption and third-harmo
 Correlation effects in the SHG spectrum have been treated as well in a TD-DFT framework\cite{PhysRevB.82.235201} by using the so-called long-range-corrected (LRC) approximation,\cite{LRC} a semi-empirical simple model for the screened electron-hole attraction, that includes only the long-range part of the interaction. %In Fig.~6 we see the $\epsilon_2$ calculated within the LRC approximation: 
 As earlier recognised, this approximation fails for strong excitons. In fact by tuning the empirical parameter for the screening we could get the position of the first exciton, though its intensity is strongly overestimated (see caption of Fig.~6), but in no way we could get the second excitonic peak. Those pitfalls reflected also in the SHG spectrum, as shown in Refs.~\cite{gruningtddf1,gruningtddf2}. 
 \section{Conclusions}\label{conclusion}                                        
-In this highlight we presented an \ai real-time approach to calculate nonlinear optical properties of extended systems in the length gauge. The key strengths of the proposed approach are first, the correct treatment of the coupling between electrons and the external field and second the possibility to include easily static correlation effects beyond the IPA. \\
-%\begin{wrapfigure}{r}{0.5\textwidth}
-\begin{figure}[H]
-%\begin{wrapfigure}{r}{0.5\textwidth}
-    \centering
-\includegraphics[width=0.5\textwidth]{Figures/eps_and_X2_short}
-	\caption{\footnotesize{SHG spectra for the h-BN monolayer at different levels of theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (dashed grey line) and TD-BSE (continuous blue line). The imaginary part of the dielectric constant at both $\omega/2$ (red continuous line) and $\omega$ (red dashed line) is reported in (b) at the  TD-BSE level. The vertical lines represent the $GW$ fundamental gap (green dashed line) and half of the $GW$ fundamental gap (green continuous line). \label{X2bn} }}
-\end{figure}
-%\end{wrapfigure}
-%In fact in the real-time dynamics correlation effects can be added by simply turned on or off the corresponding single particle operator.  
+In this highlight we presented an \ai real-time approach to calculate nonlinear optical properties of extended systems in the length gauge. The key strengths of the proposed approach are first, the correct treatment of the coupling between electrons and the external field and second the possibility to include easily static correlation effects beyond the IPA.\\ 
 All this methodology is implemented in the Yambo code\cite{yambo} and we provided different tutorials to explain how to calculate the non-linear response.\cite{yambo_wiki} The code is freely available and parallelized on frequencies, k-points and threads. \\
 We would like to conlude pointing out that our approach, although very accurate for the non-linear response, is far from complete: dynamic effects have not yet been included in the EOMs and correlation effects beyond electron-hole interaction, as for example bi-exitons or trions are not present.\cite{schafer} Morever calculation of non-linear response in complex system can be challange due to the computational and memory requirements.\\
 At present tehre aore different on-going projects to extend the present code and overcome some of its limitations: 1) extension of the present approach towards the pump and probe spectroscopy; 2) inclusion of temperature effects in the non-linear response coupling the code with electron-phonon self-energy; 3) application to non-perturbative phenomena as high-harmonic generation.
