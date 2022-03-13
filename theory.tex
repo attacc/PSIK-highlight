@@ -269,19 +269,29 @@ H^{s}_\kk
 = -\frac{1}{2}\left(\nabla + i\kk\right )^2 + \bar v^{s}(\rr) -\Omega\Efield^{s}\cdot \nabla_\kk %CHECK
 \ee
 which is a functional of both the density and the polarisation and $\Efield^{s}$ is the Kohn-Sham macroscopic field, that contains the corresponding macroscopic components of the exchange correlation functional.\\ 
-The KS macroscopic electric field can be parameterised in different way, starting from other long range functionals, imposing exact constrain in the linear response limit and so on. We tested and implemented different possible parametrization for this functional, see Refs.~\onlinecite{gruningtddf1,gruningtddf2} for a discussion.
-\subsection{Computational scheme}\label{sc:compdet}
+The KS macroscopic electric field can be parameterised in different way, starting from other long range functionals, imposing the exact constraint in the linear response limit and so on. We tested and implemented different possible parametrization for this functional, see Refs.~\onlinecite{gruningtddf1,gruningtddf2} for a discussion.
 
-In previous sections we have shown how to obtain EOMs in length gauge in extended systems and how to include correlation effects, here we discuss how to extract different non-linear response functions from real-time simulations.\\
-According to the response function one is interested in, different analysis of the real-time polarization will be required. For example in the second/third harmonic generation case we perturb the system with a monochromatic electric field $\efield(t) = \efield_0 \sin(\omega_L t)$ at different frequencies and after some time, thanks to the dephasing term, the  polarisation $\PP(t)$ will be a periodic function of period $T_L =\frac{2\pi}{\omega_L}$, where $\omega_L$ is the frequency of the external perturbation and it can be expanded in a Fourier series as: $ \PP(t) = \sum_{n=-\infty}^{+\infty} \pp_n e^{-i\omega_n t} $, with $\omega_n = n \omega_L$. The complex coefficients $\pp_n$ are related to the different susceptibilities, and they can be obtained by fitting the polarization with the above functional form, as show in Fig.~\ref{fg:ptanalysis}. 
 
+\subsubsection{Non-linear response functions from real-time simulations}\label{sc:compdet}
+
+A real-time simulation outputs the real-item polarization. Similarly to an experiment, we can change the intensity and temporal behaviour of the external field and the signal post-processing to obtain the response function of interest.      
+%In previous sections we have shown how to obtain EOMs in length gauge in extended systems and how to include correlation effects, here we discuss how to extract different non-linear response functions from real-time simulations.\\
+For example in the second/third harmonic generation case, we perturb the system with a monochromatic electric field $\efield(t) = \efield_0 \sin(\omega_L t)$, where $\omega_L$ is the frequency of the external perturbation. Once due to decoherence, the amplitude of the eigenemodes of the system becomes negligible, the polarisation $\PP(t)$ is a periodic function of period $T_L =\frac{2\pi}{\omega_L}$ and can be expanded in a Fourier series as:
+\be
+\PP(t) = \sum_{n=-\infty}^{+\infty} \pp_n e^{-i n \omega_L t}, 
+\label{eq:chifromp}
+\ee
+ where the complex coefficients $\pp_n$ are proportional to the $n^{th}$-harmonic-generation response at $\omega_L$. These coefficients can be obtained by solving the set of linear equations resulting when Eq.~\ref{eq:chifromp} is truncated at some order $N$ and evaluated at $2N+1$ times $t$ sampled as shown in Fig.~\ref{fg:ptanalysis}.  %fitting the polarization with the above functional form, as show in Fig.~\ref{fg:ptanalysis}. % IT IS NOT A FIT! 
+To obtain the frequency-dependent  $n^{th}$-harmonic-generation response, one runs a set of simulations sweeping $\omega_L$ over the range of frequencies of interest. 
+ 
 \begin{wrapfigure}[19]{r}{0.5\textwidth}
     \centering
 \includegraphics[width=0.5\textwidth]{Figures/eps_and_X2_short}
 	\caption{\footnotesize{SHG spectra for the h-BN monolayer at different levels of theory [Eq.~\eqref{mbhamiltonian}]: (a) IPA (dashed grey line) and TD-BSE (continuous blue line). The imaginary part of the dielectric constant at both $\omega/2$ (red continuous line) and $\omega$ (red dashed line) is reported in (b) at the  TD-BSE level. The vertical lines represent the $GW$ fundamental gap (green dashed line) and half of the $GW$ fundamental gap (green continuous line). \label{X2bn} }}
 %\end{figure}
 \end{wrapfigure}
-A different approach is used to study the two-photon absorption. In this case since we are searching for a response function at the same frequencies of the incoming laser we cannot use the above mentioned scheme, but we have to subtract the linear response contribution. This is done by performing simulations with different laser intensities and then  resort to a Richardson extrapolation to extract the contribution we are interested in.\cite{attaccalite2018two} Other scheme are possible for different response functions or for example for pump and probe configurations.
+
+A different scheme is used to study the two-photon absorption. In this case since we are searching for a response function at the same frequencies of the incoming laser we cannot use the above mentioned scheme, but we have to subtract the linear response contribution. This is done by performing simulations with different laser intensities and then  resort to a Richardson extrapolation to extract the contribution we are interested in.\cite{attaccalite2018two} %Other schemes are possible for different response functions or for example for pump-\&probe configurations.
 
 \subsection{Results}\label{sc:results}
 Here we present some example of results obtained with the computational scheme presented in previous sections.
