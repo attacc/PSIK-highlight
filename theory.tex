@@ -5,7 +5,7 @@ In the previous section, we discussed the advantages of frequency-response deriv
 
     Real-time approaches present the major advantage that electron correlation can be included straightforwardly by adding many-body operators to the Hamiltonian. A further advantage of real-time approaches is that they are non-perturbative in the external fields and therefore one obtains optical susceptibilities at any order without increasing the computational cost and with the only limitation dictated by the machine precision. Finally, within a real-time approach, several non-linear phenomena and thus spectroscopic techniques are described by the same EOMs. For instance, by the superposition of several laser fields one can simulate sum- and difference-frequency harmonic generation, or four-waves mixing.\cite{boyd} On the other hand, within a real-time density matrix formalism describing the coupling between light and electrons in extended  periodic system is far from straightforward.
 
-    Here, we present a real-time \ai approach based on a formalism alterative to density matrix and based on an effective Schr\"odinger equation where the coupling between light and electrons in a periodic system is derived from the Berry's dynamical polarisation following the scheme proposed by Souza et al.~\cite{souza_prb}. Before presenting the approach, we briefly discussed the  definition of polarisation in periodic systems. In our approach, we introduce correlation both within the Green's function theory, producing the real-time equivalent of the BSE and within a TD-DFT framework.  
+    Here, we present a real-time \ai approach based on a formalism alternative to density matrix and based on an effective Schr\"odinger equation where the coupling between light and electrons in a periodic system is derived from the Berry's dynamical polarisation following the scheme proposed by Souza et al.~\cite{souza_prb}. Before presenting the approach, we briefly discussed the  definition of polarisation in periodic systems. In our approach, we introduce correlation both within the Green's function theory, producing the real-time equivalent of the BSE and within a TD-DFT framework.  
     
 \subsection{Why do we need Berry's phase?}
 %In this work we use dynamical Berry's phase to calculate the non-linear response in extended systems. 
@@ -42,7 +42,7 @@ The definition of polarisation is intrinsically related to the one of the dipole
 %\end{wrapfigure}
 %Finally let mention that also the well know Clausius-Mossotti formula for the polarisability\cite{Mossotti} cannot be used in real solids because wave-functions are not localised objects.\\
 In crystalline solids, the definition of bulk polarisation is difficult for two main reasons.
-First, in treating crystalline solids one imposes periodic boundary conditions to reflect the periodicity of the lattice and the Bloch functions. With periodic boundary conditions, the position operator, that is not periodic, is ill-defined. Then, a definition of the dipole operator, and thuso of the polarisanility,  that relies on the position is ill-defined.% in periodic systems, because $\vec \rr$ is not periodic while wave-functions are. WF ARE NOT PERIODIC... BLOCH THEO
+First, in treating crystalline solids one imposes periodic boundary conditions to reflect the periodicity of the lattice and the Bloch functions. With periodic boundary conditions, the position operator, that is not periodic, is ill-defined. Then, a definition of the dipole operator, and thus of the polarizability,  that relies on the position is ill-defined.% in periodic systems, because $\vec \rr$ is not periodic while wave-functions are. WF ARE NOT PERIODIC... BLOCH THEO
  Second, differently from finite systems, the polarisation cannot be expressed as an integral on the charge density\cite{Martin1998}.
 This can be understood when we write down the general relation between polarisation and density:
 \be
@@ -209,7 +209,7 @@ We refer to this level of approximation as TD-BSE, also known in other works as 
 \label{mbhamiltonian}
 \eea
 where $ \SiS_{\kk}^{\text {cohsex}}[\rho-\rho_0]$ is the screened exchange self-energy\cite{attaccalite}, an example of the static correlation $\SiS^{xc,static}$ mentioned in the introduction. $\rho_0$ is the equilibrium density matrix, that can be reconstruct from the time-dependent valence bands.\cite{nloptics2013}\\
-We want to emphasise again that within this approach many-body effects are easily implemented by adding terms to the unperturbed independent-particle Hamiltonian $\hat H^{0,\text{IPA}}$ in the EOMs [Eq.~\eqref{eom}]. 
+We want to emphasize again that within this approach many-body effects are easily implemented by adding terms to the unperturbed independent-particle Hamiltonian $\hat H^{0,\text{IPA}}$ in the EOMs [Eq.~\eqref{eom}]. 
 Limitations may arise because of the computational cost of calculating those additional terms. For instance, the large number of $\kk$-points needed to converge the SHG and THG spectra can hinder calculations of these spectra at this level of theory for some material. %However, much less $\kk$-points are needed for converging for example the screened-exchange self-energy itself and currently we are investigating how to exploit this property and devise ``double grid'' strategies similar to the one proposed in Ref.~\cite{kammerlander}. 
 %In this chapter effects beyond IPA are limited to the QPA and TDH.
 
@@ -255,7 +255,7 @@ As discussed previously, the time-dependent density functional theory (TDDFT)  i
 % An alternative way to BSEinclude correlation effects in the 
 TDDFT is an extension of the ground-state formalism that allows to investigate the properties and dynamics of many-body systems in the presence of time-dependent potential.\cite{PhysRevLett.52.997} 
 TDDFT has been applied successfully in molecular systems. In contrast with other approaches, as for instance Green's function theory\cite{strinati} that provides a similar accuracy in extended\cite{Aulbur19991} and finite systems\cite{li2019comparing}, results obtained within standard TDDFT for dielectrics has an accuracy similar to the Random Phase Approximation.
-On the other hand, TDDFT has a much lower cost than the Green's function formalism and it is therefore appealing to develop TDDFT approaches that, maintaing the computational costs of standard approximations, can provide accurate optical spectra of dielectrics.   
+On the other hand, TDDFT has a much lower cost than the Green's function formalism and it is therefore appealing to develop TDDFT approaches that, maintaining the computational costs of standard approximations, can provide accurate optical spectra of dielectrics.   
 While much of the attention in the literature is dedicated to the development of approximations for the exchange-correlation potential---that effectively describes many-body effects within DFT, the issue of TDDFT in solids is of fundamental nature. The central proof of TDDFT, demonstrating the mapping between the time-dependent density and the time-dependent potential, relies on the mapping between currents and densities through the continuity equation. This mapping requires a surface integral involving the density and the potential to vanish. For finite systems, this condition is satisfied rigorously. For a periodic system, the condition can be satisfied as long as the density and potential are periodic. When a macroscopic uniform electric field is applied and the potential is no longer periodic, there is no mapping between density and current-density and TDDFT does not apply.\cite{Gonze1995} This is exactly the case when we try to calculate optical properties by using TDDFT. 
 
 \begin{wrapfigure}{l}{0.4\textwidth}
@@ -279,7 +279,7 @@ which is a functional of both the density and the polarisation and $\Efield^{s}$
 
 \subsubsection{Non-linear response functions from real-time simulations}\label{sc:compdet}
 
-A real-time simulation outputs the real-item polarisation. Similarly to an experiment, we can change the intensity and temporal behaviour of the external field and the signal post-processing to obtain the response function of interest.      
+A real-time simulation outputs the real-item polarisation. Similarly to an experiment, we can change the intensity and temporal behavior of the external field and the signal post-processing to obtain the response function of interest.      
 %In previous sections we have shown how to obtain EOMs in length gauge in extended systems and how to include correlation effects, here we discuss how to extract different non-linear response functions from real-time simulations.\\
 For example in the second/third harmonic generation case, we perturb the system with a monochromatic electric field $\efield(t) = \efield_0 \sin(\omega_L t)$, where $\omega_L$ is the frequency of the external perturbation. Once, due to decoherence, the amplitude of the eigenemodes of the system becomes negligible, the polarisation $\PP(t)$ is a periodic function of period $T_L =\frac{2\pi}{\omega_L}$ and can be expanded in a Fourier series as:
 \be
@@ -320,7 +320,7 @@ The code avails of the sophisticated parallelization of the yambo code\cite{yamb
 % THREADS???? I DON'T THINK THIS WAS CLEAR - NOT TO ME - EITHER NEEDS TO BE EXPLAINED BETTER OR LEAVE IT OUT
 %
 
-Although very accurate for the non-linear response, our approach is missing dynamic correlation effects, to accurately describe scattering and decoherence, processes and correlation effects beyond electron-hole interaction, as for example those needed to describe bi-excitons or trions.\cite{schafer} Furthermore, calculation of non-linear response in complex system can be challanging due to the computational and memory requirements. 
+Although very accurate for the non-linear response, our approach is missing dynamic correlation effects, to accurately describe scattering and decoherence, processes and correlation effects beyond electron-hole interaction, as for example those needed to describe bi-excitons or trions.\cite{schafer} Furthermore, calculation of non-linear response in complex system can be challenging due to the computational and memory requirements. 
 There are several on-going efforts to extend the approach and overcome some of its limitations, for example, 1) the extension to pump and probe spectroscopies; 2) the inclusion of temperature effects by considering an electron-phonon self-energy; 3) the application to non-perturbative phenomena as high-harmonic generation.
 
 
