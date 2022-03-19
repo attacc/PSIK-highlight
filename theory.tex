@@ -205,10 +205,10 @@ Beyond the TDH approximation one has the TD-Hartree-Fock that includes the respo
 The next step is thus to consider a screened exchange term in which the relevant electron correlation is introduced as a static screening term.~\cite{strinati} The latter is calculated for the unperturbed KS system and is fixed to its initial value.
 We refer to this level of approximation as TD-BSE, also known in other works as  TD screened Hartree-Fock (TD-SHF):
 \bea
-\HH_{mb} (t) &=& \hh_{\kk} + \Delta \hh_{\kk} + \UU_{\kk} +\VV_{\kk}^H[n-n_0]+ \SiS_{\kk}^{\text {cohsex}}[\rho-\rho_0].
+\HH_{mb} (t) &=& \hh_{\kk} + \Delta \hh_{\kk} + \UU_{\kk} +\VV_{\kk}^H[n-n_0] + \SiS_{\kk}^{\text {sex}}[\rho]- \SiS_{\kk}^{\text {sex}}[\rho_0].
 \label{mbhamiltonian}
 \eea
-where $ \SiS_{\kk}^{\text {cohsex}}[\rho-\rho_0]$ is the screened exchange self-energy\cite{attaccalite}, an example of the static correlation $\SiS^{xc,static}$ mentioned in the introduction. $\rho_0$ is the equilibrium density matrix, that can be reconstruct from the time-dependent valence bands.\cite{nloptics2013}\\
+where $ \SiS_{\kk}^{\text {sex}}[\rho]$ is the screened exchange self-energy\cite{attaccalite}, an example of the static correlation $\SiS^{xc,static}$ mentioned in the introduction. $\rho_0$ is the equilibrium density matrix, that can be reconstruct from the time-dependent valence bands.\cite{nloptics2013}\\
 We want to emphasize again that within this approach many-body effects are easily implemented by adding terms to the unperturbed independent-particle Hamiltonian $\hat H^{0,\text{IPA}}$ in the EOMs [Eq.~\eqref{eom}]. 
 Limitations may arise because of the computational cost of calculating those additional terms. For instance, the large number of $\kk$-points needed to converge the SHG and THG spectra can hinder calculations of these spectra at this level of theory for some material. %However, much less $\kk$-points are needed for converging for example the screened-exchange self-energy itself and currently we are investigating how to exploit this property and devise ``double grid'' strategies similar to the one proposed in Ref.~\cite{kammerlander}. 
 %In this chapter effects beyond IPA are limited to the QPA and TDH.
